@@ -21,11 +21,12 @@ export default function TimelineMap({ stops, selectedStopId, onStopSelect, route
         <p className="text-sm text-gray-600 mb-4">{routeName}</p>
       )}
       
-      <div className="relative">
+      {/* Scrollable container */}
+      <div className="relative max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-university-300 scrollbar-track-gray-100">
         {/* Timeline line */}
         <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-300"></div>
         
-        <div className="space-y-4">
+        <div className="space-y-4 pr-2">
           {stops.map((stop, index) => {
             const isSelected = selectedStopId === stop.id;
             const isLast = index === stops.length - 1;
@@ -79,7 +80,7 @@ export default function TimelineMap({ stops, selectedStopId, onStopSelect, route
       
       <div className="mt-4 p-3 bg-gray-50 rounded-lg">
         <p className="text-xs text-gray-600 text-center">
-          Tap any stop to view arrival times
+          Tap any stop to view arrival times • Scroll to see all stops
         </p>
       </div>
     </div>
