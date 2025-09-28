@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: brur-bus-schedule
+    env: static
+    buildCommand: pnpm install && pnpm run build
+    staticPublishPath: ./dist
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /index.html
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
