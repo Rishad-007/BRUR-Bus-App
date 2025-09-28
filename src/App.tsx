@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import type { SelectedBusInfo } from './types/bus';
 import { calculateTimeDifference, formatTimeDifference } from './utils/timeUtils';
-import { Bus as BusIcon, Clock, MapPin, Navigation } from 'lucide-react';
+import { Bus as BusIcon, Clock, MapPin, Navigation, ExternalLink, Users } from 'lucide-react';
 import busSchedulesData from './data/busSchedules.json';
+import TimelineMap from './components/TimelineMap';
 
 function App() {
   const [selectedBusInfo, setSelectedBusInfo] = useState<SelectedBusInfo>({
@@ -81,6 +82,12 @@ function App() {
             <div className="text-center">
               <h1 className="text-2xl font-bold text-gray-800">BRUR Bus Schedule</h1>
               <p className="text-sm text-gray-600">Begum Rokeya University, Rangpur</p>
+              <div className="mt-2 flex items-center justify-center space-x-2">
+                <div className="w-6 h-6 bg-university-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">BR</span>
+                </div>
+                <span className="text-xs text-gray-500">Official University App</span>
+              </div>
             </div>
           </div>
         </div>
@@ -175,6 +182,16 @@ function App() {
           </div>
         )}
 
+        {/* Timeline Map */}
+        {selectedBusInfo.bus && selectedBusInfo.startTime && (
+          <TimelineMap
+            stops={selectedBusInfo.bus.stops}
+            selectedStopId={selectedBusInfo.selectedStop?.id || null}
+            onStopSelect={(stopId) => handleStopChange(stopId)}
+            routeName={selectedBusInfo.bus.route}
+          />
+        )}
+
         {/* Stop Times Display */}
         {stopTimes && selectedBusInfo.selectedStop && (
           <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-university-500">
@@ -225,6 +242,33 @@ function App() {
             </div>
           </div>
         )}
+
+        {/* Powered By Section */}
+        <div className="bg-gradient-to-r from-university-500 to-university-600 rounded-xl shadow-lg p-6 text-white">
+          <div className="flex items-center justify-center space-x-3 mb-4">
+            <div className="bg-white/20 p-2 rounded-full">
+              <Users className="w-6 h-6" />
+            </div>
+            <div className="text-center">
+              <h3 className="text-lg font-bold">Powered by</h3>
+              <p className="text-sm opacity-90">Begum Rokeya University Debate Forum</p>
+            </div>
+          </div>
+          <div className="text-center">
+            <a
+              href="https://brudf.edu.bd"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition-colors duration-200"
+            >
+              <span className="text-sm font-medium">Visit BRUDF Website</span>
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
+          <p className="text-xs text-center mt-3 opacity-75">
+            Developed by the Debate Forum for the University Community
+          </p>
+        </div>
 
         {/* Footer */}
         <footer className="text-center py-6">
