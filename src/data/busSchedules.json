@@ -2,11 +2,11 @@
   "buses": [
     {
       "id": "bus-1",
-      "name": "BRUR Express",
-      "route": "Campus to City Center",
+      "name": "BRTC Bus 1",
+      "route": "Campus to Bodorgonj",
       "startTimes": [
-        "8:00 AM",
-        "9:10 AM", 
+        "8:10 AM",
+        "9:10 AM",
         "11:10 AM",
         "1:30 PM",
         "3:30 PM",
@@ -28,7 +28,7 @@
           }
         },
         {
-          "id": "stop-2", 
+          "id": "stop-2",
           "name": "Rangpur Railway Station",
           "times": {
             "8:00 AM": ["8:20 AM", "8:30 AM"],
@@ -118,7 +118,31 @@
             "7:10 PM": ["9:30 PM", "9:40 PM"]
           }
         }
-      ]
+      ],
+      "specialConditions": {
+        "Friday": {
+          "available": false,
+          "message": "No buses available today."
+        },
+        "Saturday": {
+          "available": true,
+          "limitedSchedule": [
+            {
+              "time": "3:30 PM",
+              "route": "Campus to City Center",
+              "additionalStops": ["Rangpur Zoo", "Rangpur Stadium"]
+            },
+            {
+              "time": "5:10 PM",
+              "route": "Campus to City Center",
+              "additionalStops": [
+                "Rangpur Medical College",
+                "Rangpur City Center"
+              ]
+            }
+          ]
+        }
+      }
     },
     {
       "id": "bus-2",
@@ -127,7 +151,7 @@
       "startTimes": [
         "8:00 AM",
         "9:10 AM",
-        "11:10 AM", 
+        "11:10 AM",
         "1:30 PM",
         "3:30 PM",
         "5:10 PM",
@@ -212,7 +236,28 @@
             "7:10 PM": ["8:35 PM", "8:45 PM"]
           }
         }
-      ]
+      ],
+      "specialConditions": {
+        "Friday": {
+          "available": false,
+          "message": "No buses available today."
+        },
+        "Saturday": {
+          "available": true,
+          "limitedSchedule": [
+            {
+              "time": "3:30 PM",
+              "route": "Campus to Residential Areas",
+              "additionalStops": ["Residential Block A", "Residential Block B"]
+            },
+            {
+              "time": "5:10 PM",
+              "route": "Campus to Residential Areas",
+              "additionalStops": ["Residential Block C", "Residential Block D"]
+            }
+          ]
+        }
+      }
     },
     {
       "id": "bus-3",
@@ -222,7 +267,7 @@
         "8:00 AM",
         "9:10 AM",
         "11:10 AM",
-        "1:30 PM", 
+        "1:30 PM",
         "3:30 PM",
         "5:10 PM",
         "7:10 PM"

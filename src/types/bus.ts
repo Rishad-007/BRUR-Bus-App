@@ -6,12 +6,25 @@ export interface BusStop {
   };
 }
 
+export interface SpecialConditions {
+  [day: string]: {
+    available: boolean;
+    message?: string;
+    limitedSchedule?: Array<{
+      time: string;
+      route: string;
+      additionalStops: string[];
+    }>;
+  };
+}
+
 export interface Bus {
   id: string;
   name: string;
   route: string;
   startTimes: string[];
   stops: BusStop[];
+  specialConditions?: SpecialConditions; // Added optional specialConditions property
 }
 
 export interface BusScheduleData {
