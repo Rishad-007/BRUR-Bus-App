@@ -57,12 +57,6 @@ function getUniqueRouteNames(buses: BusSchedule[]) {
 }
 
 // Helper to check if a bus is a special trip
-function isSpecialTrip(bus: BusSchedule) {
-  return (
-    bus.name.toLowerCase().includes("library trip") ||
-    bus.name.toLowerCase().includes("saturday special trip")
-  );
-}
 
 interface SelectedBusInfo {
   bus: BusSchedule | null;
