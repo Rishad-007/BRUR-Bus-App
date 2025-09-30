@@ -1,0 +1,19 @@
+[
+    { "Time": "8:10", "Stopage": "Campus" },
+    { "Time": "8:30", "Stopage": "Bangladesh bank Mor" },
+    { "Time": "8:35", "Stopage": "Pakar Matha" },
+    { "Time": "8:37", "Stopage": "Kodom Toli" },
+    { "Time": "8:45", "Stopage": "Burir Hat" },
+    { "Time": "8:46", "Stopage": "Moulovi Bazar" },
+    { "Time": "8:59", "Stopage": "Gangacara Gov College" },
+    { "Time": "9:00", "Stopage": "Gangacara Zero Point" },
+    { "Time": "9:10", "Stopage": "Gangacara Zero Point" },
+    { "Time": "9:15", "Stopage": "Chengmari" },
+    { "Time": "9:18", "Stopage": "Balar Ghat" },
+    { "Time": "9:25", "Stopage": "Pach matha" },
+    { "Time": "9:30", "Stopage": "Burir Hat" },
+    { "Time": "9:35", "Stopage": "Kodom Toli" },
+    { "Time": "9:36", "Stopage": "Pakar Matha" },
+    { "Time": "9:40", "Stopage": "Bangladesh bank Mor" },
+    { "Time": "10:00", "Stopage": "Campus" }
+]

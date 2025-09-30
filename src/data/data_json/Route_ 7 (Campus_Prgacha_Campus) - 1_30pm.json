@@ -1,0 +1,11 @@
+[
+    { "Time": "1:30", "Stopage": "Campus" },
+    { "Time": "1:40", "Stopage": "Mahiganj bazar" },
+    { "Time": "1:50", "Stopage": "Deuti" },
+    { "Time": "1:55", "Stopage": "Saidpur" },
+    { "Time": "2:00", "Stopage": "Kodomtola" },
+    { "Time": "2:05", "Stopage": "Saidpur" },
+    { "Time": "2:10", "Stopage": "Deuti" },
+    { "Time": "2:20", "Stopage": "Mahiganj bazar" },
+    { "Time": "2:30", "Stopage": "Campus" }
+]

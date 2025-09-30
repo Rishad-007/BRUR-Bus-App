@@ -1,14 +1,29 @@
 import { useState, useEffect } from 'react';
-import type { SelectedBusInfo } from './types/bus';
+
 import { calculateTimeDifference, formatTimeDifference } from './utils/timeUtils';
 import { Bus as BusIcon, Clock, MapPin, Navigation, ExternalLink, Users } from 'lucide-react';
 import busSchedulesData from './data/busSchedules.json';
 import TimelineMap from './components/TimelineMap';
 
+type BusScheduleStop = {
+  Time: string;
+  Stopage: string;
+};
+
+type BusSchedule = {
+  id: string;
+  name: string;
+  schedule: BusScheduleStop[];
+};
+
+interface SelectedBusInfo {
+  bus: BusSchedule | null;
+  selectedStop: BusScheduleStop | null;
+}
+
 function App() {
   const [selectedBusInfo, setSelectedBusInfo] = useState<SelectedBusInfo>({
     bus: null,
-    startTime: null,
     selectedStop: null
   });
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -29,10 +44,9 @@ function App() {
   const handleBusChange = (busId: string) => {
     setIsLoading(true);
     try {
-      const bus = busSchedulesData.buses.find(b => b.id === busId);
+      const bus = busSchedulesData.buses.find((b: any) => b.id === busId);
       setSelectedBusInfo({
         bus: bus || null,
-        startTime: null,
         selectedStop: null
       });
     } catch (error) {
@@ -42,33 +56,15 @@ function App() {
     }
   };
 
-  const handleStartTimeChange = (startTime: string) => {
-    setSelectedBusInfo(prev => ({
-      ...prev,
-      startTime,
-      selectedStop: null
-    }));
-  };
 
-  const handleStopChange = (stopId: string) => {
-    if (!selectedBusInfo.bus || !selectedBusInfo.startTime) return;
-    
-    const stop = selectedBusInfo.bus.stops.find(s => s.id === stopId);
+  const handleStopChange = (stopIndex: number) => {
+    if (!selectedBusInfo.bus) return;
+    const stop = selectedBusInfo.bus.schedule[stopIndex];
     setSelectedBusInfo(prev => ({
       ...prev,
       selectedStop: stop || null
     }));
   };
-
-  const getStopTimes = () => {
-    if (!selectedBusInfo.bus || !selectedBusInfo.startTime || !selectedBusInfo.selectedStop) {
-      return null;
-    }
-    
-    return selectedBusInfo.selectedStop.times[selectedBusInfo.startTime] || null;
-  };
-
-  const stopTimes = getStopTimes();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-university-50 to-primary-50">
@@ -128,54 +124,32 @@ function App() {
             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-university-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <option value="">Choose a bus...</option>
-            {busSchedulesData.buses.map((bus) => (
+            {busSchedulesData.buses.map((bus: any) => (
               <option key={bus.id} value={bus.id}>
-                {bus.name} - {bus.route}
+                {bus.name}
               </option>
             ))}
           </select>
         </div>
 
-        {/* Start Time Selection */}
-        {selectedBusInfo.bus && (
-          <div className="bg-white rounded-xl shadow-lg p-6">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-              <Clock className="w-5 h-5 mr-2 text-university-600" />
-              Select Departure Time
-            </h2>
-            <select
-              value={selectedBusInfo.startTime || ''}
-              onChange={(e) => handleStartTimeChange(e.target.value)}
-              aria-label="Select departure time"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-university-500 focus:border-transparent"
-            >
-              <option value="">Choose departure time...</option>
-              {selectedBusInfo.bus.startTimes.map((time) => (
-                <option key={time} value={time}>
-                  {time}
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
 
         {/* Stop Selection */}
-        {selectedBusInfo.bus && selectedBusInfo.startTime && (
+        {selectedBusInfo.bus && (
           <div className="bg-white rounded-xl shadow-lg p-6">
             <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
               <MapPin className="w-5 h-5 mr-2 text-university-600" />
               Select Bus Stop
             </h2>
             <select
-              value={selectedBusInfo.selectedStop?.id || ''}
-              onChange={(e) => handleStopChange(e.target.value)}
+              value={selectedBusInfo.selectedStop ? selectedBusInfo.bus.schedule.findIndex(s => s === selectedBusInfo.selectedStop) : ''}
+              onChange={(e) => handleStopChange(Number(e.target.value))}
               aria-label="Select bus stop"
               className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-university-500 focus:border-transparent"
             >
               <option value="">Choose a stop...</option>
-              {selectedBusInfo.bus.stops.map((stop) => (
-                <option key={stop.id} value={stop.id}>
-                  {stop.name}
+              {selectedBusInfo.bus.schedule.map((stop, idx) => (
+                <option key={idx} value={idx}>
+                  {stop.Stopage} ({stop.Time})
                 </option>
               ))}
             </select>
@@ -183,62 +157,37 @@ function App() {
         )}
 
         {/* Timeline Map */}
-        {selectedBusInfo.bus && selectedBusInfo.startTime && (
+        {selectedBusInfo.bus && (
           <TimelineMap
-            stops={selectedBusInfo.bus.stops}
-            selectedStopId={selectedBusInfo.selectedStop?.id || null}
-            onStopSelect={(stopId) => handleStopChange(stopId)}
-            routeName={selectedBusInfo.bus.route}
+            stops={selectedBusInfo.bus.schedule}
+            selectedStopIndex={selectedBusInfo.selectedStop ? selectedBusInfo.bus.schedule.findIndex(s => s === selectedBusInfo.selectedStop) : null}
+            onStopSelect={handleStopChange}
+            routeName={selectedBusInfo.bus.name}
           />
         )}
 
         {/* Stop Times Display */}
-        {stopTimes && selectedBusInfo.selectedStop && (
+        {selectedBusInfo.selectedStop && (
           <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-university-500">
             <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
               <Navigation className="w-5 h-5 mr-2 text-university-600" />
-              {selectedBusInfo.selectedStop.name}
+              {selectedBusInfo.selectedStop.Stopage}
             </h3>
-            
             <div className="space-y-4">
-              {stopTimes.map((time, index) => {
-                const timeDiff = calculateTimeDifference(time);
-                const isNext = index === 0 && !timeDiff.isPast;
-                
-                return (
-                  <div
-                    key={index}
-                    className={`p-4 rounded-lg border-2 ${
-                      isNext 
-                        ? 'border-university-500 bg-university-50' 
-                        : 'border-gray-200 bg-gray-50'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-lg font-bold text-gray-800">
-                          {time}
-                        </p>
-                        <p className="text-sm text-gray-600">
-                          {index === 0 ? 'First Visit' : 'Second Visit'}
-                        </p>
-                      </div>
-                      <div className="text-right">
-                        <p className={`text-sm font-medium ${
-                          timeDiff.isPast ? 'text-red-600' : 'text-green-600'
-                        }`}>
-                          {formatTimeDifference(timeDiff)}
-                        </p>
-                        {isNext && (
-                          <p className="text-xs text-university-600 font-medium">
-                            Next Bus
-                          </p>
-                        )}
-                      </div>
-                    </div>
+              <div className="p-4 rounded-lg border-2 border-university-500 bg-university-50">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-lg font-bold text-gray-800">
+                      {selectedBusInfo.selectedStop.Time}
+                    </p>
                   </div>
-                );
-              })}
+                  <div className="text-right">
+                    <p className={`text-sm font-medium`}>
+                      {formatTimeDifference(calculateTimeDifference(selectedBusInfo.selectedStop.Time))}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         )}

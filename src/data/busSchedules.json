@@ -1,343 +1,431 @@
 {
   "buses": [
     {
-      "id": "bus-1",
-      "name": "BRTC Bus 1",
-      "route": "Campus to Bodorgonj",
-      "startTimes": [
-        "8:10 AM",
-        "9:10 AM",
-        "11:10 AM",
-        "1:30 PM",
-        "3:30 PM",
-        "5:10 PM",
-        "7:10 PM"
-      ],
-      "stops": [
-        {
-          "id": "stop-1",
-          "name": "University Main Gate",
-          "times": {
-            "8:00 AM": ["8:05 AM", "8:15 AM"],
-            "9:10 AM": ["9:15 AM", "9:25 AM"],
-            "11:10 AM": ["11:15 AM", "11:25 AM"],
-            "1:30 PM": ["1:35 PM", "1:45 PM"],
-            "3:30 PM": ["3:35 PM", "3:45 PM"],
-            "5:10 PM": ["5:15 PM", "5:25 PM"],
-            "7:10 PM": ["7:15 PM", "7:25 PM"]
-          }
-        },
-        {
-          "id": "stop-2",
-          "name": "Rangpur Railway Station",
-          "times": {
-            "8:00 AM": ["8:20 AM", "8:30 AM"],
-            "9:10 AM": ["9:30 AM", "9:40 AM"],
-            "11:10 AM": ["11:30 AM", "11:40 AM"],
-            "1:30 PM": ["1:50 PM", "2:00 PM"],
-            "3:30 PM": ["3:50 PM", "4:00 PM"],
-            "5:10 PM": ["5:30 PM", "5:40 PM"],
-            "7:10 PM": ["7:30 PM", "7:40 PM"]
-          }
-        },
-        {
-          "id": "stop-3",
-          "name": "City Center Market",
-          "times": {
-            "8:00 AM": ["8:40 AM", "8:50 AM"],
-            "9:10 AM": ["9:50 AM", "10:00 AM"],
-            "11:10 AM": ["11:50 AM", "12:00 PM"],
-            "1:30 PM": ["2:10 PM", "2:20 PM"],
-            "3:30 PM": ["4:10 PM", "4:20 PM"],
-            "5:10 PM": ["5:50 PM", "6:00 PM"],
-            "7:10 PM": ["7:50 PM", "8:00 PM"]
-          }
-        },
-        {
-          "id": "stop-4",
-          "name": "Rangpur Medical College",
-          "times": {
-            "8:00 AM": ["9:00 AM", "9:10 AM"],
-            "9:10 AM": ["10:10 AM", "10:20 AM"],
-            "11:10 AM": ["12:10 PM", "12:20 PM"],
-            "1:30 PM": ["2:30 PM", "2:40 PM"],
-            "3:30 PM": ["4:30 PM", "4:40 PM"],
-            "5:10 PM": ["6:10 PM", "6:20 PM"],
-            "7:10 PM": ["8:10 PM", "8:20 PM"]
-          }
-        },
-        {
-          "id": "stop-5",
-          "name": "Rangpur Zoo",
-          "times": {
-            "8:00 AM": ["9:20 AM", "9:30 AM"],
-            "9:10 AM": ["10:30 AM", "10:40 AM"],
-            "11:10 AM": ["12:30 PM", "12:40 PM"],
-            "1:30 PM": ["2:50 PM", "3:00 PM"],
-            "3:30 PM": ["4:50 PM", "5:00 PM"],
-            "5:10 PM": ["6:30 PM", "6:40 PM"],
-            "7:10 PM": ["8:30 PM", "8:40 PM"]
-          }
-        },
-        {
-          "id": "stop-6",
-          "name": "Rangpur Stadium",
-          "times": {
-            "8:00 AM": ["9:40 AM", "9:50 AM"],
-            "9:10 AM": ["10:50 AM", "11:00 AM"],
-            "11:10 AM": ["12:50 PM", "1:00 PM"],
-            "1:30 PM": ["3:10 PM", "3:20 PM"],
-            "3:30 PM": ["5:10 PM", "5:20 PM"],
-            "5:10 PM": ["6:50 PM", "7:00 PM"],
-            "7:10 PM": ["8:50 PM", "9:00 PM"]
-          }
-        },
-        {
-          "id": "stop-7",
-          "name": "Rangpur University Gate",
-          "times": {
-            "8:00 AM": ["10:00 AM", "10:10 AM"],
-            "9:10 AM": ["11:10 AM", "11:20 AM"],
-            "11:10 AM": ["1:10 PM", "1:20 PM"],
-            "1:30 PM": ["3:30 PM", "3:40 PM"],
-            "3:30 PM": ["5:30 PM", "5:40 PM"],
-            "5:10 PM": ["7:10 PM", "7:20 PM"],
-            "7:10 PM": ["9:10 PM", "9:20 PM"]
-          }
-        },
-        {
-          "id": "stop-8",
-          "name": "Rangpur City Center",
-          "times": {
-            "8:00 AM": ["10:20 AM", "10:30 AM"],
-            "9:10 AM": ["11:30 AM", "11:40 AM"],
-            "11:10 AM": ["1:30 PM", "1:40 PM"],
-            "1:30 PM": ["3:50 PM", "4:00 PM"],
-            "3:30 PM": ["5:50 PM", "6:00 PM"],
-            "5:10 PM": ["7:30 PM", "7:40 PM"],
-            "7:10 PM": ["9:30 PM", "9:40 PM"]
-          }
-        }
-      ],
-      "specialConditions": {
-        "Friday": {
-          "available": false,
-          "message": "No buses available today."
-        },
-        "Saturday": {
-          "available": true,
-          "limitedSchedule": [
-            {
-              "time": "3:30 PM",
-              "route": "Campus to City Center",
-              "additionalStops": ["Rangpur Zoo", "Rangpur Stadium"]
-            },
-            {
-              "time": "5:10 PM",
-              "route": "Campus to City Center",
-              "additionalStops": [
-                "Rangpur Medical College",
-                "Rangpur City Center"
-              ]
-            }
-          ]
-        }
-      }
+      "id": "route3-5-10pm",
+      "name": "Route 3 (Campus-Bodorgonj-Campus) - 5:10pm",
+      "schedule": [
+        { "Time": "5:10", "Stopage": "University Campus" },
+        { "Time": "5:10", "Stopage": "Lalbag" },
+        { "Time": "5:12", "Stopage": "Khamar Mor" },
+        { "Time": "5:14", "Stopage": "Chartola mor" },
+        { "Time": "5:16", "Stopage": "Bikon Mor" },
+        { "Time": "5:18", "Stopage": "Shapla Chattor" },
+        { "Time": "5:20", "Stopage": "Ershad Mor" },
+        { "Time": "5:23", "Stopage": "GoneshPur" },
+        { "Time": "5:26", "Stopage": "Bus Terminal" },
+        { "Time": "5:31", "Stopage": "Prime Hospital" },
+        { "Time": "5:33", "Stopage": "Sultan More" },
+        { "Time": "5:36", "Stopage": "Ghagot" },
+        { "Time": "5:40", "Stopage": "Nazir Hat" },
+        { "Time": "5:44", "Stopage": "Lahiri Hat" },
+        { "Time": "5:47", "Stopage": "Miler Par" },
+        { "Time": "5:50", "Stopage": "Mokter Para" },
+        { "Time": "5:54", "Stopage": "Chengmari" },
+        { "Time": "6:00", "Stopage": "Paker matha" },
+        { "Time": "6:04", "Stopage": "Bodorgonj" },
+        { "Time": "6:04", "Stopage": "Bodorgonj" },
+        { "Time": "6:08", "Stopage": "Paker matha" },
+        { "Time": "6:10", "Stopage": "Chengmari" },
+        { "Time": "6:14", "Stopage": "Mokter Para" },
+        { "Time": "6:17", "Stopage": "Miler Par" },
+        { "Time": "6:20", "Stopage": "Lahiri Hat" },
+        { "Time": "6:24", "Stopage": "Nazir Hat" },
+        { "Time": "6:32", "Stopage": "Ghagot" },
+        { "Time": "6:34", "Stopage": "Sultan More" },
+        { "Time": "6:36", "Stopage": "Prime Hospital" },
+        { "Time": "6:39", "Stopage": "Bus Terminal" },
+        { "Time": "6:41", "Stopage": "Pathagar" },
+        { "Time": "6:43", "Stopage": "Dorshana Mor" },
+        { "Time": "6:46", "Stopage": "Modern Mor" },
+        { "Time": "6:50", "Stopage": "University Campus" }
+      ]
     },
     {
-      "id": "bus-2",
-      "name": "BRUR Local",
-      "route": "Campus to Residential Areas",
-      "startTimes": [
-        "8:00 AM",
-        "9:10 AM",
-        "11:10 AM",
-        "1:30 PM",
-        "3:30 PM",
-        "5:10 PM",
-        "7:10 PM"
-      ],
-      "stops": [
-        {
-          "id": "stop-1",
-          "name": "University Main Gate",
-          "times": {
-            "8:00 AM": ["8:05 AM", "8:15 AM"],
-            "9:10 AM": ["9:15 AM", "9:25 AM"],
-            "11:10 AM": ["11:15 AM", "11:25 AM"],
-            "1:30 PM": ["1:35 PM", "1:45 PM"],
-            "3:30 PM": ["3:35 PM", "3:45 PM"],
-            "5:10 PM": ["5:15 PM", "5:25 PM"],
-            "7:10 PM": ["7:15 PM", "7:25 PM"]
-          }
-        },
-        {
-          "id": "stop-2",
-          "name": "Professors' Quarter",
-          "times": {
-            "8:00 AM": ["8:10 AM", "8:20 AM"],
-            "9:10 AM": ["9:20 AM", "9:30 AM"],
-            "11:10 AM": ["11:20 AM", "11:30 AM"],
-            "1:30 PM": ["1:40 PM", "1:50 PM"],
-            "3:30 PM": ["3:40 PM", "3:50 PM"],
-            "5:10 PM": ["5:20 PM", "5:30 PM"],
-            "7:10 PM": ["7:20 PM", "7:30 PM"]
-          }
-        },
-        {
-          "id": "stop-3",
-          "name": "Student Hostel Area",
-          "times": {
-            "8:00 AM": ["8:25 AM", "8:35 AM"],
-            "9:10 AM": ["9:35 AM", "9:45 AM"],
-            "11:10 AM": ["11:35 AM", "11:45 AM"],
-            "1:30 PM": ["1:55 PM", "2:05 PM"],
-            "3:30 PM": ["3:55 PM", "4:05 PM"],
-            "5:10 PM": ["5:35 PM", "5:45 PM"],
-            "7:10 PM": ["7:35 PM", "7:45 PM"]
-          }
-        },
-        {
-          "id": "stop-4",
-          "name": "Rangpur Cantonment",
-          "times": {
-            "8:00 AM": ["8:45 AM", "8:55 AM"],
-            "9:10 AM": ["9:55 AM", "10:05 AM"],
-            "11:10 AM": ["11:55 AM", "12:05 PM"],
-            "1:30 PM": ["2:15 PM", "2:25 PM"],
-            "3:30 PM": ["4:15 PM", "4:25 PM"],
-            "5:10 PM": ["5:55 PM", "6:05 PM"],
-            "7:10 PM": ["7:55 PM", "8:05 PM"]
-          }
-        },
-        {
-          "id": "stop-5",
-          "name": "Rangpur Market",
-          "times": {
-            "8:00 AM": ["9:05 AM", "9:15 AM"],
-            "9:10 AM": ["10:15 AM", "10:25 AM"],
-            "11:10 AM": ["12:15 PM", "12:25 PM"],
-            "1:30 PM": ["2:35 PM", "2:45 PM"],
-            "3:30 PM": ["4:35 PM", "4:45 PM"],
-            "5:10 PM": ["6:15 PM", "6:25 PM"],
-            "7:10 PM": ["8:15 PM", "8:25 PM"]
-          }
-        },
-        {
-          "id": "stop-6",
-          "name": "Rangpur Hospital",
-          "times": {
-            "8:00 AM": ["9:25 AM", "9:35 AM"],
-            "9:10 AM": ["10:35 AM", "10:45 AM"],
-            "11:10 AM": ["12:35 PM", "12:45 PM"],
-            "1:30 PM": ["2:55 PM", "3:05 PM"],
-            "3:30 PM": ["4:55 PM", "5:05 PM"],
-            "5:10 PM": ["6:35 PM", "6:45 PM"],
-            "7:10 PM": ["8:35 PM", "8:45 PM"]
-          }
-        }
-      ],
-      "specialConditions": {
-        "Friday": {
-          "available": false,
-          "message": "No buses available today."
-        },
-        "Saturday": {
-          "available": true,
-          "limitedSchedule": [
-            {
-              "time": "3:30 PM",
-              "route": "Campus to Residential Areas",
-              "additionalStops": ["Residential Block A", "Residential Block B"]
-            },
-            {
-              "time": "5:10 PM",
-              "route": "Campus to Residential Areas",
-              "additionalStops": ["Residential Block C", "Residential Block D"]
-            }
-          ]
-        }
-      }
+      "id": "route3-8-10am",
+      "name": "Route 3 (Campus-Bodorgonj-Campus) - 8:10am",
+      "schedule": [
+        { "Time": "8:10", "Stopage": "University Campus" },
+        { "Time": "8:13", "Stopage": "Modern Mor" },
+        { "Time": "8:16", "Stopage": "Dorshana Mor" },
+        { "Time": "8:18", "Stopage": "Pathagar" },
+        { "Time": "8:20", "Stopage": "Bus Terminal" },
+        { "Time": "8:22", "Stopage": "Prime Hospital" },
+        { "Time": "8:24", "Stopage": "Sultan More" },
+        { "Time": "8:26", "Stopage": "Ghagot" },
+        { "Time": "8:30", "Stopage": "Nazir Hat" },
+        { "Time": "8:34", "Stopage": "Lahiri Hat" },
+        { "Time": "8:37", "Stopage": "Miler Par" },
+        { "Time": "8:40", "Stopage": "Mokter Para" },
+        { "Time": "8:44", "Stopage": "Chengmari" },
+        { "Time": "8:46", "Stopage": "Paker matha" },
+        { "Time": "8:50", "Stopage": "Bodorgonj" },
+        { "Time": "9:00", "Stopage": "Bodorgonj" },
+        { "Time": "9:04", "Stopage": "Paker matha" },
+        { "Time": "9:06", "Stopage": "Chengmari" },
+        { "Time": "9:10", "Stopage": "Mokter Para" },
+        { "Time": "9:13", "Stopage": "Miler Par" },
+        { "Time": "9:16", "Stopage": "Lahiri Hat" },
+        { "Time": "9:20", "Stopage": "Nazir Hat" },
+        { "Time": "9:24", "Stopage": "Ghagot" },
+        { "Time": "9:26", "Stopage": "Sultan More" },
+        { "Time": "9:28", "Stopage": "Prime Hospital" },
+        { "Time": "9:31", "Stopage": "Bus Terminal" },
+        { "Time": "9:37", "Stopage": "GoneshPur" },
+        { "Time": "9:40", "Stopage": "Ershad Mor" },
+        { "Time": "9:44", "Stopage": "Shapla Chattor" },
+        { "Time": "9:46", "Stopage": "Bikon Mor" },
+        { "Time": "9:48", "Stopage": "Chartola mor" },
+        { "Time": "9:50", "Stopage": "Khamar Mor" },
+        { "Time": "9:55", "Stopage": "Lalbag" },
+        { "Time": "10:00", "Stopage": "University Campus" }
+      ]
     },
     {
-      "id": "bus-3",
-      "name": "BRUR Shuttle",
-      "route": "Campus Internal Route",
-      "startTimes": [
-        "8:00 AM",
-        "9:10 AM",
-        "11:10 AM",
-        "1:30 PM",
-        "3:30 PM",
-        "5:10 PM",
-        "7:10 PM"
-      ],
-      "stops": [
-        {
-          "id": "stop-1",
-          "name": "Main Campus",
-          "times": {
-            "8:00 AM": ["8:05 AM", "8:15 AM"],
-            "9:10 AM": ["9:15 AM", "9:25 AM"],
-            "11:10 AM": ["11:15 AM", "11:25 AM"],
-            "1:30 PM": ["1:35 PM", "1:45 PM"],
-            "3:30 PM": ["3:35 PM", "3:45 PM"],
-            "5:10 PM": ["5:15 PM", "5:25 PM"],
-            "7:10 PM": ["7:15 PM", "7:25 PM"]
-          }
-        },
-        {
-          "id": "stop-2",
-          "name": "Library Building",
-          "times": {
-            "8:00 AM": ["8:10 AM", "8:20 AM"],
-            "9:10 AM": ["9:20 AM", "9:30 AM"],
-            "11:10 AM": ["11:20 AM", "11:30 AM"],
-            "1:30 PM": ["1:40 PM", "1:50 PM"],
-            "3:30 PM": ["3:40 PM", "3:50 PM"],
-            "5:10 PM": ["5:20 PM", "5:30 PM"],
-            "7:10 PM": ["7:20 PM", "7:30 PM"]
-          }
-        },
-        {
-          "id": "stop-3",
-          "name": "Science Faculty",
-          "times": {
-            "8:00 AM": ["8:20 AM", "8:30 AM"],
-            "9:10 AM": ["9:30 AM", "9:40 AM"],
-            "11:10 AM": ["11:30 AM", "11:40 AM"],
-            "1:30 PM": ["1:50 PM", "2:00 PM"],
-            "3:30 PM": ["3:50 PM", "4:00 PM"],
-            "5:10 PM": ["5:30 PM", "5:40 PM"],
-            "7:10 PM": ["7:30 PM", "7:40 PM"]
-          }
-        },
-        {
-          "id": "stop-4",
-          "name": "Arts Faculty",
-          "times": {
-            "8:00 AM": ["8:35 AM", "8:45 AM"],
-            "9:10 AM": ["9:45 AM", "9:55 AM"],
-            "11:10 AM": ["11:45 AM", "11:55 AM"],
-            "1:30 PM": ["2:05 PM", "2:15 PM"],
-            "3:30 PM": ["4:05 PM", "4:15 PM"],
-            "5:10 PM": ["5:45 PM", "5:55 PM"],
-            "7:10 PM": ["7:45 PM", "7:55 PM"]
-          }
-        },
-        {
-          "id": "stop-5",
-          "name": "Administrative Building",
-          "times": {
-            "8:00 AM": ["8:50 AM", "9:00 AM"],
-            "9:10 AM": ["10:00 AM", "10:10 AM"],
-            "11:10 AM": ["12:00 PM", "12:10 PM"],
-            "1:30 PM": ["2:20 PM", "2:30 PM"],
-            "3:30 PM": ["4:20 PM", "4:30 PM"],
-            "5:10 PM": ["6:00 PM", "6:10 PM"],
-            "7:10 PM": ["8:00 PM", "8:10 PM"]
-          }
-        }
+      "id": "route5-3-30pm",
+      "name": "Route 5 (Campus_Taragonj_Camous) - 3:30pm",
+      "schedule": [
+        { "Time": "3:30", "Stopage": "Campus" },
+        { "Time": "3:40", "Stopage": "Bus Terminal" },
+        { "Time": "3:43", "Stopage": "Checkpost" },
+        { "Time": "3:45", "Stopage": "Medical Mor" },
+        { "Time": "3:47", "Stopage": "Hazipara" },
+        { "Time": "3:50", "Stopage": "CO Bazar" },
+        { "Time": "3:52", "Stopage": "Hasna Bazar" },
+        { "Time": "3:54", "Stopage": "Uttom" },
+        { "Time": "3:56", "Stopage": "Hazirhat" },
+        { "Time": "4:00", "Stopage": "Paglapir" },
+        { "Time": "4:04", "Stopage": "Hazirhat" },
+        { "Time": "4:06", "Stopage": "Uttom" },
+        { "Time": "4:08", "Stopage": "Hasna Bazar" },
+        { "Time": "4:10", "Stopage": "CO Bazar" },
+        { "Time": "4:13", "Stopage": "Hazipara" },
+        { "Time": "4:15", "Stopage": "Medical Mor" },
+        { "Time": "4:17", "Stopage": "Checkpost" },
+        { "Time": "4:20", "Stopage": "Bus Terminal" },
+        { "Time": "4:30", "Stopage": "Campus" }
+      ]
+    },
+    {
+      "id": "route5-5-10pm",
+      "name": "Route 5 (Campus_Taragonj_Camous) - 5:10pm",
+      "schedule": [
+        { "Time": "5:10", "Stopage": "Campus" },
+        { "Time": "5:20", "Stopage": "Bus Terminal" },
+        { "Time": "5:23", "Stopage": "Checkpost" },
+        { "Time": "5:25", "Stopage": "Medical Mor" },
+        { "Time": "5:27", "Stopage": "Hazipara" },
+        { "Time": "5:30", "Stopage": "CO Bazar" },
+        { "Time": "5:32", "Stopage": "Hasna Bazar" },
+        { "Time": "5:34", "Stopage": "Uttom" },
+        { "Time": "5:36", "Stopage": "Hazirhat" },
+        { "Time": "5:40", "Stopage": "Paglapir" },
+        { "Time": "5:47", "Stopage": "Bamon Dighi" },
+        { "Time": "5:50", "Stopage": "Ikor Chali" },
+        { "Time": "5:55", "Stopage": "Bel Toli" },
+        { "Time": "6:00", "Stopage": "Taragonj Bus Stand" },
+        { "Time": "6:10", "Stopage": "Taragonj Bus Stand" },
+        { "Time": "6:15", "Stopage": "Bel Toli" },
+        { "Time": "6:20", "Stopage": "Ikor Chali" },
+        { "Time": "6:23", "Stopage": "Bamon Dighi" },
+        { "Time": "6:30", "Stopage": "Paglapir" },
+        { "Time": "6:34", "Stopage": "Hazirhat" },
+        { "Time": "6:36", "Stopage": "Uttom" },
+        { "Time": "6:38", "Stopage": "Hasna Bazar" },
+        { "Time": "6:40", "Stopage": "CO Bazar" },
+        { "Time": "6:43", "Stopage": "Hazipara" },
+        { "Time": "6:45", "Stopage": "Medical Mor" },
+        { "Time": "6:48", "Stopage": "Checkpost" },
+        { "Time": "6:50", "Stopage": "Bus Terminal" },
+        { "Time": "7:00", "Stopage": "Campus" }
+      ]
+    },
+    {
+      "id": "route5-8-10am",
+      "name": "Route 5 (Campus_Taragonj_Camous) - 8:10am",
+      "schedule": [
+        { "Time": "8:10", "Stopage": "Campus" },
+        { "Time": "8:20", "Stopage": "Bus Terminal" },
+        { "Time": "8:23", "Stopage": "Checkpost" },
+        { "Time": "8:25", "Stopage": "Medical Mor" },
+        { "Time": "8:27", "Stopage": "Hazipara" },
+        { "Time": "8:30", "Stopage": "CO Bazar" },
+        { "Time": "8:32", "Stopage": "Hasna Bazar" },
+        { "Time": "8:34", "Stopage": "Uttom" },
+        { "Time": "8:36", "Stopage": "Hazirhat" },
+        { "Time": "8:40", "Stopage": "Paglapir" },
+        { "Time": "8:47", "Stopage": "Bamon Dighi" },
+        { "Time": "8:50", "Stopage": "Ikor Chali" },
+        { "Time": "8:55", "Stopage": "Bel Toli" },
+        { "Time": "9:00", "Stopage": "Taragonj Bus Stand" },
+        { "Time": "9:10", "Stopage": "Taragonj Bus Stand" },
+        { "Time": "9:15", "Stopage": "Bel Toli" },
+        { "Time": "9:20", "Stopage": "Ikor Chali" },
+        { "Time": "9:23", "Stopage": "Bamon Dighi" },
+        { "Time": "9:30", "Stopage": "Paglapir" },
+        { "Time": "9:34", "Stopage": "Hazirhat" },
+        { "Time": "9:36", "Stopage": "Uttom" },
+        { "Time": "9:38", "Stopage": "Hasna Bazar" },
+        { "Time": "9:40", "Stopage": "CO Bazar" },
+        { "Time": "9:43", "Stopage": "Hazipara" },
+        { "Time": "9:45", "Stopage": "Medical Mor" },
+        { "Time": "9:48", "Stopage": "Checkpost" },
+        { "Time": "9:50", "Stopage": "Bus Terminal" },
+        { "Time": "10:00", "Stopage": "Campus" }
+      ]
+    },
+    {
+      "id": "route6-11-10am",
+      "name": "Route 6 (Campus_Pirganj_Campus) - 11:10am",
+      "schedule": [
+        { "Time": "11:00", "Stopage": "Campus" },
+        { "Time": "11:05", "Stopage": "Payrabond" },
+        { "Time": "11:07", "Stopage": "Boiragigonj" },
+        { "Time": "11:12", "Stopage": "Boldipukur" },
+        { "Time": "11:16", "Stopage": "Zaigirhat" },
+        { "Time": "11:20", "Stopage": "Gorer Matha" },
+        { "Time": "11:22", "Stopage": "MithaPukur" },
+        { "Time": "11:25", "Stopage": "MithaPukur" },
+        { "Time": "11:27", "Stopage": "Gorer Matha" },
+        { "Time": "11:31", "Stopage": "Zaigirhat" },
+        { "Time": "11:35", "Stopage": "Boldipukur" },
+        { "Time": "11:40", "Stopage": "Boiragigonj" },
+        { "Time": "11:42", "Stopage": "Payrabond" },
+        { "Time": "11:47", "Stopage": "Campus" }
+      ]
+    },
+    {
+      "id": "route6-5-10pm",
+      "name": "Route 6 (Campus_Pirganj_Campus) - 5:10pm",
+      "schedule": [
+        { "Time": "5:10", "Stopage": "Campus" },
+        { "Time": "5:15", "Stopage": "Payrabond" },
+        { "Time": "5:17", "Stopage": "Boiragigonj" },
+        { "Time": "5:22", "Stopage": "Boldipukur" },
+        { "Time": "5:26", "Stopage": "Zaigirhat" },
+        { "Time": "5:30", "Stopage": "Gorer Matha" },
+        { "Time": "5:32", "Stopage": "MithaPukur" },
+        { "Time": "5:40", "Stopage": "Shothibari" },
+        { "Time": "5:45", "Stopage": "BoroDarga" },
+        { "Time": "5:48", "Stopage": "Bish_mail" },
+        { "Time": "5:53", "Stopage": "Lal_dighi" },
+        { "Time": "5:57", "Stopage": "Jamtala" },
+        { "Time": "6:00", "Stopage": "Pirgonj" },
+        { "Time": "6:10", "Stopage": "Pirgonj" },
+        { "Time": "6:11", "Stopage": "Jamtala" },
+        { "Time": "6:15", "Stopage": "Lal_dighi" },
+        { "Time": "6:20", "Stopage": "Bish_mail" },
+        { "Time": "6:23", "Stopage": "BoroDarga" },
+        { "Time": "6:28", "Stopage": "Shothibari" },
+        { "Time": "6:35", "Stopage": "MithaPukur" },
+        { "Time": "6:37", "Stopage": "Gorer Matha" },
+        { "Time": "6:41", "Stopage": "Zaigirhat" },
+        { "Time": "6:45", "Stopage": "Boldipukur" },
+        { "Time": "6:50", "Stopage": "Boiragigonj" },
+        { "Time": "6:52", "Stopage": "Payrabond" },
+        { "Time": "6:57", "Stopage": "Campus" }
+      ]
+    },
+    {
+      "id": "route6-8-10am",
+      "name": "Route 6 (Campus_Pirganj_Campus) - 8:10am",
+      "schedule": [
+        { "Time": "8:10", "Stopage": "Campus" },
+        { "Time": "8:15", "Stopage": "Payrabond" },
+        { "Time": "8:17", "Stopage": "Boiragigonj" },
+        { "Time": "8:22", "Stopage": "Boldipukur" },
+        { "Time": "8:26", "Stopage": "Zaigirhat" },
+        { "Time": "8:30", "Stopage": "Gorer Matha" },
+        { "Time": "8:32", "Stopage": "MithaPukur" },
+        { "Time": "8:40", "Stopage": "Shothibari" },
+        { "Time": "8:45", "Stopage": "BoroDarga" },
+        { "Time": "8:48", "Stopage": "Bish_mail" },
+        { "Time": "8:53", "Stopage": "Lal_dighi" },
+        { "Time": "8:57", "Stopage": "Jamtala" },
+        { "Time": "9:00", "Stopage": "Pirgonj" },
+        { "Time": "9:10", "Stopage": "Pirgonj" },
+        { "Time": "9:11", "Stopage": "Jamtala" },
+        { "Time": "9:15", "Stopage": "Lal_dighi" },
+        { "Time": "9:20", "Stopage": "Bish_mail" },
+        { "Time": "9:23", "Stopage": "BoroDarga" },
+        { "Time": "9:28", "Stopage": "Shothibari" },
+        { "Time": "9:35", "Stopage": "MithaPukur" },
+        { "Time": "9:37", "Stopage": "Gorer Matha" },
+        { "Time": "9:41", "Stopage": "Zaigirhat" },
+        { "Time": "9:45", "Stopage": "Boldipukur" },
+        { "Time": "9:50", "Stopage": "Boiragigonj" },
+        { "Time": "9:55", "Stopage": "Payrabond" },
+        { "Time": "10:00", "Stopage": "Campus" }
+      ]
+    },
+    {
+      "id": "route7-1-30pm",
+      "name": "Route 7 (Campus_Prgacha_Campus) - 1:30pm",
+      "schedule": [
+        { "Time": "1:30", "Stopage": "Campus" },
+        { "Time": "1:40", "Stopage": "Mahiganj bazar" },
+        { "Time": "1:50", "Stopage": "Deuti" },
+        { "Time": "1:55", "Stopage": "Saidpur" },
+        { "Time": "2:00", "Stopage": "Kodomtola" },
+        { "Time": "2:05", "Stopage": "Saidpur" },
+        { "Time": "2:10", "Stopage": "Deuti" },
+        { "Time": "2:20", "Stopage": "Mahiganj bazar" },
+        { "Time": "2:30", "Stopage": "Campus" }
+      ]
+    },
+    {
+      "id": "route7-5-10pm",
+      "name": "Route 7 (Campus_Prgacha_Campus) - 5:10pm",
+      "schedule": [
+        { "Time": "5:10", "Stopage": "Campus" },
+        { "Time": "5:20", "Stopage": "Mahiganj bazar" },
+        { "Time": "5:30", "Stopage": "Deuti" },
+        { "Time": "5:35", "Stopage": "Saidpur" },
+        { "Time": "5:40", "Stopage": "Kodomtola" },
+        { "Time": "5:50", "Stopage": "Pirgacha" },
+        { "Time": "6:00", "Stopage": "Kodomtola" },
+        { "Time": "6:05", "Stopage": "Saidpur" },
+        { "Time": "6:10", "Stopage": "Deuti" },
+        { "Time": "6:20", "Stopage": "Mahiganj bazar" },
+        { "Time": "6:30", "Stopage": "Campus" }
+      ]
+    },
+    {
+      "id": "route7-8-10am",
+      "name": "Route 7 (Campus_Prgacha_Campus) - 8:10am",
+      "schedule": [
+        { "Time": "8:10", "Stopage": "Campus" },
+        { "Time": "8:20", "Stopage": "Mahiganj bazar" },
+        { "Time": "8:30", "Stopage": "Deuti" },
+        { "Time": "8:35", "Stopage": "Saidpur" },
+        { "Time": "8:40", "Stopage": "Kodomtola" },
+        { "Time": "8:50", "Stopage": "Pirgacha" },
+        { "Time": "9:00", "Stopage": "Pirgacha" },
+        { "Time": "9:10", "Stopage": "Kodomtola" },
+        { "Time": "9:15", "Stopage": "Saidpur" },
+        { "Time": "9:20", "Stopage": "Deuti" },
+        { "Time": "9:30", "Stopage": "Mahiganj bazar" },
+        { "Time": "9:40", "Stopage": "Campus" }
+      ]
+    },
+    {
+      "id": "route8-1-30pm",
+      "name": "Route 8 (BRTC_ Campus_Kaunia_campus) - Trip_1:30pm",
+      "schedule": [
+        { "Time": "1:30", "Stopage": "Capus" },
+        { "Time": "1:35", "Stopage": "Sathmatha" },
+        { "Time": "1:40", "Stopage": "Nobdigonj" },
+        { "Time": "1:45", "Stopage": "Mirbag" },
+        { "Time": "1:50", "Stopage": "Beilibridge" },
+        { "Time": "1:55", "Stopage": "Railgate" },
+        { "Time": "2:00", "Stopage": "kaunia" },
+        { "Time": "2:10", "Stopage": "kaunia" },
+        { "Time": "2:15", "Stopage": "Railgate" },
+        { "Time": "2:20", "Stopage": "Beilibridge" },
+        { "Time": "2:25", "Stopage": "Mirbag" },
+        { "Time": "2:30", "Stopage": "Nobdigonj" },
+        { "Time": "2:35", "Stopage": "Sathmatha" },
+        { "Time": "2:40", "Stopage": "Campus" }
+      ]
+    },
+    {
+      "id": "route8-5-10pm",
+      "name": "Route 8 (BRTC_ Campus_Kaunia_campus) - Trip_5:10pm",
+      "schedule": [
+        { "Time": "5:10", "Stopage": "Capus" },
+        { "Time": "5:15", "Stopage": "Sathmatha" },
+        { "Time": "5:20", "Stopage": "Nobdigonj" },
+        { "Time": "5:25", "Stopage": "Mirbag" },
+        { "Time": "5:30", "Stopage": "Beilibridge" },
+        { "Time": "5:35", "Stopage": "Railgate" },
+        { "Time": "5:40", "Stopage": "kaunia" },
+        { "Time": "5:50", "Stopage": "kaunia" },
+        { "Time": "5:55", "Stopage": "Railgate" },
+        { "Time": "6:00", "Stopage": "Beilibridge" },
+        { "Time": "6:05", "Stopage": "Mirbag" },
+        { "Time": "6:10", "Stopage": "Nobdigonj" },
+        { "Time": "6:15", "Stopage": "Sathmatha" },
+        { "Time": "6:20", "Stopage": "Campus" }
+      ]
+    },
+    {
+      "id": "route8-8-30am",
+      "name": "Route 8 (BRTC_ Campus_Kaunia_campus) - Trip_8:30am",
+      "schedule": [
+        { "Time": "8:40", "Stopage": "Capus" },
+        { "Time": "8:45", "Stopage": "Sathmatha" },
+        { "Time": "8:50", "Stopage": "Nobdigonj" },
+        { "Time": "8:55", "Stopage": "Mirbag" },
+        { "Time": "9:00", "Stopage": "Beilibridge" },
+        { "Time": "9:05", "Stopage": "Railgate" },
+        { "Time": "9:10", "Stopage": "kaunia" },
+        { "Time": "9:20", "Stopage": "kaunia" },
+        { "Time": "9:25", "Stopage": "Railgate" },
+        { "Time": "9:30", "Stopage": "Beilibridge" },
+        { "Time": "9:35", "Stopage": "Mirbag" },
+        { "Time": "9:40", "Stopage": "Nobdigonj" },
+        { "Time": "9:45", "Stopage": "Sathmatha" },
+        { "Time": "9:50", "Stopage": "Campus" }
+      ]
+    },
+    {
+      "id": "route9-3-30pm",
+      "name": "Route 9 (Campus_gangacara_campus) - 3:30pm",
+      "schedule": [
+        { "Time": "3:30", "Stopage": "Campus" },
+        { "Time": "3:50", "Stopage": "Bangladesh bank Mor" },
+        { "Time": "3:55", "Stopage": "Pakar Matha" },
+        { "Time": "3:57", "Stopage": "Kodom Toli" },
+        { "Time": "4:05", "Stopage": "Burir Hat" },
+        { "Time": "4:10", "Stopage": "Burir Hat" },
+        { "Time": "4:15", "Stopage": "Kodom Toli" },
+        { "Time": "4:16", "Stopage": "Pakar Matha" },
+        { "Time": "4:20", "Stopage": "Bangladesh bank Mor" },
+        { "Time": "4:40", "Stopage": "Campus" }
+      ]
+    },
+    {
+      "id": "route9-5-10pm",
+      "name": "Route 9 (Campus_gangacara_campus) - 5:10pm",
+      "schedule": [
+        { "Time": "5:10", "Stopage": "Campus" },
+        { "Time": "5:30", "Stopage": "Bangladesh bank Mor" },
+        { "Time": "5:35", "Stopage": "Pakar Matha" },
+        { "Time": "5:37", "Stopage": "Kodom Toli" },
+        { "Time": "5:45", "Stopage": "Burir Hat" },
+        { "Time": "5:46", "Stopage": "Moulovi Bazar" },
+        { "Time": "5:59", "Stopage": "Gangacara Gov College" },
+        { "Time": "6:00", "Stopage": "Gangacara Zero Point" },
+        { "Time": "6:05", "Stopage": "Chengmari" },
+        { "Time": "6:08", "Stopage": "Balar Ghat" },
+        { "Time": "6:15", "Stopage": "Pach matha" },
+        { "Time": "6:20", "Stopage": "Burir Hat" },
+        { "Time": "6:25", "Stopage": "Kodom Toli" },
+        { "Time": "6:26", "Stopage": "Pakar Matha" },
+        { "Time": "6:30", "Stopage": "Bangladesh bank Mor" },
+        { "Time": "6:50", "Stopage": "Campus" }
+      ]
+    },
+    {
+      "id": "route9-8-10am",
+      "name": "Route 9 (Campus_gangacara_campus) - 8:10am",
+      "schedule": [
+        { "Time": "8:10", "Stopage": "Campus" },
+        { "Time": "8:30", "Stopage": "Bangladesh bank Mor" },
+        { "Time": "8:35", "Stopage": "Pakar Matha" },
+        { "Time": "8:37", "Stopage": "Kodom Toli" },
+        { "Time": "8:45", "Stopage": "Burir Hat" },
+        { "Time": "8:46", "Stopage": "Moulovi Bazar" },
+        { "Time": "8:59", "Stopage": "Gangacara Gov College" },
+        { "Time": "9:00", "Stopage": "Gangacara Zero Point" },
+        { "Time": "9:10", "Stopage": "Gangacara Zero Point" },
+        { "Time": "9:15", "Stopage": "Chengmari" },
+        { "Time": "9:18", "Stopage": "Balar Ghat" },
+        { "Time": "9:25", "Stopage": "Pach matha" },
+        { "Time": "9:30", "Stopage": "Burir Hat" },
+        { "Time": "9:35", "Stopage": "Kodom Toli" },
+        { "Time": "9:36", "Stopage": "Pakar Matha" },
+        { "Time": "9:40", "Stopage": "Bangladesh bank Mor" },
+        { "Time": "10:00", "Stopage": "Campus" }
       ]
     }
   ]

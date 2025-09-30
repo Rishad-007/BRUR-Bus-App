@@ -1,5 +1,5 @@
 import { MapPin, Navigation } from "lucide-react";
-import type { BusStop } from "../types/bus";
+// import type { BusStop } from "../types/bus";
 import { isBusAvailableToday, getLimitedSchedule } from "../utils/timeUtils";
 
 // Mock function to retrieve special conditions
@@ -10,18 +10,13 @@ const getSpecialConditionsForRoute = () => {
 };
 
 interface TimelineMapProps {
-  stops: BusStop[];
-  selectedStopId: string | null;
-  onStopSelect: (stopId: string) => void;
+  stops: Array<{ Time: string; Stopage: string }>;
+  selectedStopIndex: number | null;
+  onStopSelect: (index: number) => void;
   routeName?: string;
 }
 
-export default function TimelineMap({
-  stops,
-  selectedStopId,
-  onStopSelect,
-  routeName,
-}: TimelineMapProps) {
+export default function TimelineMap({ stops, selectedStopIndex, onStopSelect, routeName }: TimelineMapProps) {
   const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
 
   const specialConditions = getSpecialConditionsForRoute(); // Adjusted to match the updated function signature
@@ -60,7 +55,7 @@ export default function TimelineMap({
     );
   }
 
-  if (stops.length === 0) return null;
+  if (!stops || stops.length === 0) return null;
 
   return (
     <div className="bg-white rounded-xl shadow-lg p-6">
@@ -77,14 +72,14 @@ export default function TimelineMap({
 
         <div className="space-y-4 pr-2">
           {stops.map((stop, index) => {
-            const isSelected = selectedStopId === stop.id;
+            const isSelected = selectedStopIndex === index;
             const isLast = index === stops.length - 1;
 
             return (
               <div
-                key={stop.id}
+                key={index}
                 className="relative flex items-center cursor-pointer group"
-                onClick={() => onStopSelect(stop.id)}
+                onClick={() => onStopSelect(index)}
               >
                 {/* Timeline dot */}
                 <div
@@ -118,7 +113,7 @@ export default function TimelineMap({
                         : "text-gray-800 group-hover:text-university-700"
                     }`}
                   >
-                    {stop.name}
+                    {stop.Stopage}
                   </h4>
                   <p
                     className={`text-sm ${
@@ -127,7 +122,7 @@ export default function TimelineMap({
                         : "text-gray-500 group-hover:text-university-500"
                     }`}
                   >
-                    Stop {index + 1} of {stops.length}
+                    {stop.Time}
                   </p>
                 </div>
 

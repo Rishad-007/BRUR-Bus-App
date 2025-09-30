@@ -1,0 +1,16 @@
+[
+    { "Time": "11:00", "Stopage": "Campus" },
+    { "Time": "11:05", "Stopage": "Payrabond" },
+    { "Time": "11:07", "Stopage": "Boiragigonj" },
+    { "Time": "11:12", "Stopage": "Boldipukur" },
+    { "Time": "11:16", "Stopage": "Zaigirhat" },
+    { "Time": "11:20", "Stopage": "Gorer Matha" },
+    { "Time": "11:22", "Stopage": "MithaPukur" },
+    { "Time": "11:25", "Stopage": "MithaPukur" },
+    { "Time": "11:27", "Stopage": "Gorer Matha" },
+    { "Time": "11:31", "Stopage": "Zaigirhat" },
+    { "Time": "11:35", "Stopage": "Boldipukur" },
+    { "Time": "11:40", "Stopage": "Boiragigonj" },
+    { "Time": "11:42", "Stopage": "Payrabond" },
+    { "Time": "11:47", "Stopage": "Campus" }
+]

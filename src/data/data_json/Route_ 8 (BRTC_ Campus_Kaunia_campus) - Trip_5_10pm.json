@@ -1,0 +1,16 @@
+[
+    { "Time": "5:10", "Stopage": "Capus" },
+    { "Time": "5:15", "Stopage": "Sathmatha" },
+    { "Time": "5:20", "Stopage": "Nobdigonj" },
+    { "Time": "5:25", "Stopage": "Mirbag" },
+    { "Time": "5:30", "Stopage": "Beilibridge" },
+    { "Time": "5:35", "Stopage": "Railgate" },
+    { "Time": "5:40", "Stopage": "kaunia" },
+    { "Time": "5:50", "Stopage": "kaunia" },
+    { "Time": "5:55", "Stopage": "Railgate" },
+    { "Time": "6:00", "Stopage": "Beilibridge" },
+    { "Time": "6:05", "Stopage": "Mirbag" },
+    { "Time": "6:10", "Stopage": "Nobdigonj" },
+    { "Time": "6:15", "Stopage": "Sathmatha" },
+    { "Time": "6:20", "Stopage": "Campus" }
+]

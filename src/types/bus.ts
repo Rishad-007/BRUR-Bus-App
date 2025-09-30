@@ -1,3 +1,20 @@
+// New types for updated bus schedule structure
+export interface BusScheduleStop {
+  Time: string;
+  Stopage: string;
+}
+
+export interface NewBus {
+  id: string;
+  name: string;
+  schedule: BusScheduleStop[];
+}
+
+export interface NewBusScheduleData {
+  buses: NewBus[];
+}
+
+// Old types (deprecated)
 export interface BusStop {
   id: string;
   name: string;

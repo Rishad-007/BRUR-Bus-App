@@ -1,0 +1,21 @@
+[
+    { "Time": "3:30", "Stopage": "Campus" },
+    { "Time": "3:40", "Stopage": "Bus Terminal" },
+    { "Time": "3:43", "Stopage": "Checkpost" },
+    { "Time": "3:45", "Stopage": "Medical Mor" },
+    { "Time": "3:47", "Stopage": "Hazipara" },
+    { "Time": "3:50", "Stopage": "CO Bazar" },
+    { "Time": "3:52", "Stopage": "Hasna Bazar" },
+    { "Time": "3:54", "Stopage": "Uttom" },
+    { "Time": "3:56", "Stopage": "Hazirhat" },
+    { "Time": "4:00", "Stopage": "Paglapir" },
+    { "Time": "4:04", "Stopage": "Hazirhat" },
+    { "Time": "4:06", "Stopage": "Uttom" },
+    { "Time": "4:08", "Stopage": "Hasna Bazar" },
+    { "Time": "4:10", "Stopage": "CO Bazar" },
+    { "Time": "4:13", "Stopage": "Hazipara" },
+    { "Time": "4:15", "Stopage": "Medical Mor" },
+    { "Time": "4:17", "Stopage": "Checkpost" },
+    { "Time": "4:20", "Stopage": "Bus Terminal" },
+    { "Time": "4:30", "Stopage": "Campus" }
+]
