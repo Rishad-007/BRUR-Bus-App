@@ -82,14 +82,12 @@ function App() {
   // Prepare route and special trip lists
 
   const allBuses: BusSchedule[] = busSchedulesData.buses;
-  const specialTrips = allBuses.filter(isSpecialTrip);
-  const routeBuses = allBuses.filter((bus) => !isSpecialTrip(bus));
-  // Get unique route/trip names
-  const routeNames = getUniqueRouteNames(routeBuses);
+  // Get unique route/trip names including special trips
+  const routeNames = getUniqueRouteNames(allBuses);
 
   // Get buses for selected route name
   const busesForSelectedRoute = selectedRoute
-    ? routeBuses.filter((bus) => bus.name === selectedRoute)
+    ? allBuses.filter((bus) => bus.name === selectedRoute)
     : [];
 
   // Update current time every minute
@@ -125,23 +123,7 @@ function App() {
     }
   };
 
-  // Handle special trip selection
-  const handleSpecialTripChange = (busId: string) => {
-    setIsLoading(true);
-    try {
-      const bus = specialTrips.find((b) => b.id === busId);
-      setSelectedRoute("");
-      setSelectedTimeBusId(busId);
-      setSelectedBusInfo({
-        bus: bus || null,
-        selectedStop: null,
-      });
-    } catch (error) {
-      console.error("Error selecting special trip:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  // Remove special trip selection handler (no longer needed)
 
   const handleStopChange = (stopIndex: number) => {
     if (!selectedBusInfo.bus) return;
@@ -212,7 +194,7 @@ function App() {
           </div>
         </div>
 
-        {/* Bus Selection (Two-step: Route then Time) */}
+        {/* Bus Selection (Route/Trip and Time) */}
         <div className="bg-white rounded-xl shadow-lg p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
             <BusIcon className="w-5 h-5 mr-2 text-university-600" />
@@ -222,7 +204,7 @@ function App() {
             )}
           </h2>
 
-          {/* Route selection */}
+          {/* Route selection (includes special/library trips) */}
           <label className="block mb-2 text-sm font-medium text-gray-700">
             Select Route/Trip Name
           </label>
@@ -263,31 +245,6 @@ function App() {
               </select>
             </>
           )}
-
-          {/* Special Trips */}
-          <label className="block mb-2 text-sm font-medium text-gray-700">
-            Special Trips
-          </label>
-          <select
-            value={
-              selectedRoute === "" &&
-              selectedTimeBusId &&
-              specialTrips.some((b) => b.id === selectedTimeBusId)
-                ? selectedTimeBusId
-                : ""
-            }
-            onChange={(e) => handleSpecialTripChange(e.target.value)}
-            disabled={isLoading}
-            aria-label="Select a special trip"
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-university-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <option value="">Choose a special trip...</option>
-            {specialTrips.map((bus) => (
-              <option key={bus.id} value={bus.id}>
-                {bus.name}
-              </option>
-            ))}
-          </select>
         </div>
 
         {/* Stop Selection */}

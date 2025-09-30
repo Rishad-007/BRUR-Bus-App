@@ -2,12 +2,17 @@
 
 A modern, mobile-first bus schedule web application for Begum Rokeya University, Rangpur. This is the university's first digital bus schedule system, developed by the Begum Rokeya University Debate Forum (BRUDF).
 
+## Branding & Favicon
+
+- The browser tab icon uses the official BRUDF club logo (`logo brudf.png`).
+- University and club branding are prominent throughout the app.
+
 ## Features
 
 - 🚌 **Multiple Bus Routes**: Support for different bus routes (Express, Local, Shuttle)
 - ⏰ **Real-time Updates**: Live time difference calculations from current time
 - 📱 **Mobile-First Design**: Optimized for mobile devices (90% of users)
-- 🎯 **Easy Selection**: Simple dropdown menus for bus, time, and stop selection
+- 🎯 **Easy Selection**: Two-step dropdown for route/trip name, then start time selection
 - 🗺️ **Interactive Timeline Map**: Visual route timeline with scrollable stop selection
 - 🔄 **Dual Visits**: Shows both visit times for each stop
 - 🏛️ **University Branding**: Official university logo and branding
@@ -67,36 +72,34 @@ The bus schedule data is stored in `src/data/busSchedules.json` with the followi
 {
   "buses": [
     {
-      "id": "bus-1",
-      "name": "BRUR Express",
-      "route": "Campus to City Center",
-      "startTimes": ["8:00 AM", "9:10 AM", ...],
-      "stops": [
-        {
-          "id": "stop-1",
-          "name": "University Main Gate",
-          "times": {
-            "8:00 AM": ["8:05 AM", "8:15 AM"],
-            ...
-          }
-        }
+      "id": "route4-8-10am",
+      "name": "Route 4 (Campus-DC_Mor-Campus)",
+      "Start Time": "8:10am",
+      "schedule": [
+        { "Time": "8:10", "Stopage": "University Campus" },
+        ...
       ]
-    }
+    },
+    ...
   ]
 }
 ```
+
+- Each bus entry has a unique `id`, a `name` (route/trip name), a `Start Time`, and a list of stops in `schedule`.
+- The app uses a two-step selection: first choose the route/trip name, then select the start time.
 
 ## Customization
 
 To add new buses or modify schedules:
 
-1. Edit `src/data/busSchedules.json`
-2. Update the TypeScript interfaces in `src/types/bus.ts` if needed
+1. Edit `src/data/busSchedules.json` (add new objects with `name`, `Start Time`, and `schedule`)
+2. Update the TypeScript interfaces in `src/types/bus.ts` if needed (ensure `Start Time` is included)
 3. The app will automatically reflect the changes
 
 ## Mobile Optimization
 
 The app is designed with mobile-first principles:
+
 - Touch-friendly interface
 - Optimized for small screens
 - Fast loading on mobile networks
@@ -107,6 +110,7 @@ The app is designed with mobile-first principles:
 ## Key Components
 
 ### Interactive Timeline Map
+
 - **Visual Route Display**: Shows all bus stops in a connected timeline
 - **Scrollable Interface**: Vertical scrolling to view all stops (max 5-6 visible at once)
 - **Stop Highlighting**: Selected stop is highlighted with university colors
@@ -114,11 +118,13 @@ The app is designed with mobile-first principles:
 - **Route Information**: Displays the route name above the timeline
 
 ### University Branding
+
 - **Official Logo**: University initials (BR) in university colors
 - **Professional Header**: Clean design with university name and location
 - **Official Badge**: "Official University App" indicator
 
 ### Powered By Section
+
 - **BRUDF Attribution**: Clear credit to Begum Rokeya University Debate Forum
 - **Clickable Link**: Direct link to BRUDF website (https://brudf.edu.bd)
 - **Professional Design**: Gradient background with external link icon
@@ -126,6 +132,7 @@ The app is designed with mobile-first principles:
 ## User Experience
 
 ### How to Use the App
+
 1. **Select Bus Route**: Choose from available bus routes (Express, Local, Shuttle)
 2. **Pick Departure Time**: Select from 7 available departure times
 3. **View Timeline**: See all stops in a visual, scrollable timeline
@@ -134,6 +141,7 @@ The app is designed with mobile-first principles:
 6. **Navigate**: Scroll through the timeline to see all stops
 
 ### Timeline Navigation
+
 - **Vertical Scrolling**: Smooth scrolling through all bus stops
 - **Visual Indicators**: Map pin icons and connection lines
 - **Stop Counter**: Shows current stop number (e.g., "Stop 3 of 8")
@@ -142,4 +150,4 @@ The app is designed with mobile-first principles:
 
 ## License
 
-© 2024 Begum Rokeya University, Rangpur
+© 2025 Begum Rokeya University, Rangpur
