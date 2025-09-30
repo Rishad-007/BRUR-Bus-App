@@ -301,18 +301,16 @@ function App() {
 
         {/* Powered By Section */}
         <div className="bg-gradient-to-r from-university-500 to-university-600 rounded-xl shadow-lg p-6 text-white">
-          <div className="flex items-center justify-center space-x-3 mb-4">
-            <div className="bg-white/20 p-2 rounded-full">
-              <Users className="w-6 h-6" />
+          <div className="flex flex-col items-center justify-center mb-4">
+            <div className="bg-white/20 p-2 rounded-full mb-2 flex items-center justify-center">
+              <Users className="w-7 h-7" />
             </div>
-            <div className="text-center">
-              <h3 className="text-lg font-bold">Powered by</h3>
-              <p className="text-sm opacity-90">
-                Begum Rokeya University Debate Forum
-              </p>
-            </div>
+            <h3 className="text-lg font-bold text-center">Powered by</h3>
+            <p className="text-sm opacity-90 text-center mt-1">
+              Begum Rokeya University Debate Forum
+            </p>
           </div>
-          <div className="text-center">
+          <div className="flex justify-center">
             <a
               href="https://brudf.onrender.com"
               target="_blank"
