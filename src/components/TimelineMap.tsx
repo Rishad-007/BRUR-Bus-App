@@ -16,7 +16,12 @@ interface TimelineMapProps {
   routeName?: string;
 }
 
-export default function TimelineMap({ stops, selectedStopIndex, onStopSelect, routeName }: TimelineMapProps) {
+export default function TimelineMap({
+  stops,
+  selectedStopIndex,
+  onStopSelect,
+  routeName,
+}: TimelineMapProps) {
   const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
 
   const specialConditions = getSpecialConditionsForRoute(); // Adjusted to match the updated function signature

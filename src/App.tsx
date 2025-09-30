@@ -1,9 +1,46 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import { calculateTimeDifference, formatTimeDifference } from './utils/timeUtils';
-import { Bus as BusIcon, Clock, MapPin, Navigation, ExternalLink, Users } from 'lucide-react';
-import busSchedulesData from './data/busSchedules.json';
-import TimelineMap from './components/TimelineMap';
+import {
+  calculateTimeDifference,
+  formatTimeDifference,
+} from "./utils/timeUtils";
+
+// Helper to convert 24h time string (e.g. '17:10') to 12h format with am/pm
+function formatTo12Hour(time24: string) {
+  const [hourStr, minuteStr] = time24.split(":");
+  let hour = parseInt(hourStr, 10);
+  const minute = minuteStr.padStart(2, "0");
+  const ampm = hour >= 12 ? "pm" : "am";
+  hour = hour % 12;
+  if (hour === 0) hour = 12;
+  return `${hour}:${minute} ${ampm}`;
+}
+
+// Helper to get the next upcoming stop and time difference
+function getNextStop(schedule: BusScheduleStop[], now: Date) {
+  for (let i = 0; i < schedule.length; i++) {
+    const stop = schedule[i];
+    // Parse 24h time string to Date
+    const [h, m] = stop.Time.split(":");
+    const stopDate = new Date(now);
+    stopDate.setHours(Number(h), Number(m), 0, 0);
+    if (stopDate >= now) {
+      return { stop, index: i, diff: stopDate.getTime() - now.getTime() };
+    }
+  }
+  // If all times have passed, return null
+  return null;
+}
+import {
+  Bus as BusIcon,
+  Clock,
+  MapPin,
+  Navigation,
+  ExternalLink,
+  Users,
+} from "lucide-react";
+import busSchedulesData from "./data/busSchedules.json";
+import TimelineMap from "./components/TimelineMap";
 
 type BusScheduleStop = {
   Time: string;
@@ -24,7 +61,7 @@ interface SelectedBusInfo {
 function App() {
   const [selectedBusInfo, setSelectedBusInfo] = useState<SelectedBusInfo>({
     bus: null,
-    selectedStop: null
+    selectedStop: null,
   });
   const [currentTime, setCurrentTime] = useState(new Date());
   const [isLoading, setIsLoading] = useState(false);
@@ -47,22 +84,21 @@ function App() {
       const bus = busSchedulesData.buses.find((b: any) => b.id === busId);
       setSelectedBusInfo({
         bus: bus || null,
-        selectedStop: null
+        selectedStop: null,
       });
     } catch (error) {
-      console.error('Error selecting bus:', error);
+      console.error("Error selecting bus:", error);
     } finally {
       setIsLoading(false);
     }
   };
 
-
   const handleStopChange = (stopIndex: number) => {
     if (!selectedBusInfo.bus) return;
     const stop = selectedBusInfo.bus.schedule[stopIndex];
-    setSelectedBusInfo(prev => ({
+    setSelectedBusInfo((prev) => ({
       ...prev,
-      selectedStop: stop || null
+      selectedStop: stop || null,
     }));
   };
 
@@ -76,13 +112,19 @@ function App() {
               <BusIcon className="w-8 h-8 text-white" />
             </div>
             <div className="text-center">
-              <h1 className="text-2xl font-bold text-gray-800">BRUR Bus Schedule</h1>
-              <p className="text-sm text-gray-600">Begum Rokeya University, Rangpur</p>
+              <h1 className="text-2xl font-bold text-gray-800">
+                BRUR Bus Schedule
+              </h1>
+              <p className="text-sm text-gray-600">
+                Begum Rokeya University, Rangpur
+              </p>
               <div className="mt-2 flex items-center justify-center space-x-2">
                 <div className="w-6 h-6 bg-university-500 rounded-full flex items-center justify-center">
                   <span className="text-white text-xs font-bold">BR</span>
                 </div>
-                <span className="text-xs text-gray-500">Official University App</span>
+                <span className="text-xs text-gray-500">
+                  Official University App
+                </span>
               </div>
             </div>
           </div>
@@ -97,10 +139,10 @@ function App() {
             <div>
               <p className="text-sm text-gray-600">Current Time</p>
               <p className="text-xl font-bold text-gray-800">
-                {currentTime.toLocaleTimeString('en-US', { 
-                  hour: 'numeric', 
-                  minute: '2-digit',
-                  hour12: true 
+                {currentTime.toLocaleTimeString("en-US", {
+                  hour: "numeric",
+                  minute: "2-digit",
+                  hour12: true,
                 })}
               </p>
             </div>
@@ -117,7 +159,7 @@ function App() {
             )}
           </h2>
           <select
-            value={selectedBusInfo.bus?.id || ''}
+            value={selectedBusInfo.bus?.id || ""}
             onChange={(e) => handleBusChange(e.target.value)}
             disabled={isLoading}
             aria-label="Select a bus route"
@@ -132,7 +174,6 @@ function App() {
           </select>
         </div>
 
-
         {/* Stop Selection */}
         {selectedBusInfo.bus && (
           <div className="bg-white rounded-xl shadow-lg p-6">
@@ -141,7 +182,13 @@ function App() {
               Select Bus Stop
             </h2>
             <select
-              value={selectedBusInfo.selectedStop ? selectedBusInfo.bus.schedule.findIndex(s => s === selectedBusInfo.selectedStop) : ''}
+              value={
+                selectedBusInfo.selectedStop
+                  ? selectedBusInfo.bus.schedule.findIndex(
+                      (s) => s === selectedBusInfo.selectedStop
+                    )
+                  : ""
+              }
               onChange={(e) => handleStopChange(Number(e.target.value))}
               aria-label="Select bus stop"
               className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-university-500 focus:border-transparent"
@@ -149,7 +196,7 @@ function App() {
               <option value="">Choose a stop...</option>
               {selectedBusInfo.bus.schedule.map((stop, idx) => (
                 <option key={idx} value={idx}>
-                  {stop.Stopage} ({stop.Time})
+                  {stop.Stopage} ({formatTo12Hour(stop.Time)})
                 </option>
               ))}
             </select>
@@ -159,8 +206,17 @@ function App() {
         {/* Timeline Map */}
         {selectedBusInfo.bus && (
           <TimelineMap
-            stops={selectedBusInfo.bus.schedule}
-            selectedStopIndex={selectedBusInfo.selectedStop ? selectedBusInfo.bus.schedule.findIndex(s => s === selectedBusInfo.selectedStop) : null}
+            stops={selectedBusInfo.bus.schedule.map((stop) => ({
+              ...stop,
+              Time: formatTo12Hour(stop.Time),
+            }))}
+            selectedStopIndex={
+              selectedBusInfo.selectedStop
+                ? selectedBusInfo.bus.schedule.findIndex(
+                    (s) => s === selectedBusInfo.selectedStop
+                  )
+                : null
+            }
             onStopSelect={handleStopChange}
             routeName={selectedBusInfo.bus.name}
           />
@@ -178,12 +234,26 @@ function App() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-lg font-bold text-gray-800">
-                      {selectedBusInfo.selectedStop.Time}
+                      {formatTo12Hour(selectedBusInfo.selectedStop.Time)}
                     </p>
                   </div>
                   <div className="text-right">
                     <p className={`text-sm font-medium`}>
-                      {formatTimeDifference(calculateTimeDifference(selectedBusInfo.selectedStop.Time))}
+                      {(() => {
+                        // Calculate time difference for this stop
+                        const [h, m] =
+                          selectedBusInfo.selectedStop.Time.split(":");
+                        const stopDate = new Date(currentTime);
+                        stopDate.setHours(Number(h), Number(m), 0, 0);
+                        const diff = stopDate.getTime() - currentTime.getTime();
+                        if (diff < 0) return "Departed";
+                        // Format as X min/hours left
+                        const mins = Math.round(diff / 60000);
+                        if (mins < 60) return `${mins} min left`;
+                        const hours = Math.floor(mins / 60);
+                        const remMins = mins % 60;
+                        return `${hours}h ${remMins}m left`;
+                      })()}
                     </p>
                   </div>
                 </div>
@@ -191,6 +261,33 @@ function App() {
             </div>
           </div>
         )}
+        {/* Next Upcoming Bus Info */}
+        {selectedBusInfo.bus &&
+          (() => {
+            const next = getNextStop(selectedBusInfo.bus.schedule, currentTime);
+            if (!next) return null;
+            const mins = Math.round(next.diff / 60000);
+            return (
+              <div className="bg-green-50 border-l-4 border-green-500 rounded-xl shadow-lg p-4 mb-4">
+                <div className="flex items-center space-x-3">
+                  <Clock className="w-5 h-5 text-green-600" />
+                  <div>
+                    <p className="text-sm text-gray-600">Upcoming Bus</p>
+                    <p className="text-lg font-bold text-gray-800">
+                      {next.stop.Stopage} at {formatTo12Hour(next.stop.Time)}
+                    </p>
+                    <p className="text-xs text-green-700 mt-1">
+                      {mins < 1
+                        ? "Arriving now"
+                        : mins < 60
+                        ? `${mins} min left`
+                        : `${Math.floor(mins / 60)}h ${mins % 60}m left`}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
 
         {/* Powered By Section */}
         <div className="bg-gradient-to-r from-university-500 to-university-600 rounded-xl shadow-lg p-6 text-white">
@@ -200,12 +297,14 @@ function App() {
             </div>
             <div className="text-center">
               <h3 className="text-lg font-bold">Powered by</h3>
-              <p className="text-sm opacity-90">Begum Rokeya University Debate Forum</p>
+              <p className="text-sm opacity-90">
+                Begum Rokeya University Debate Forum
+              </p>
             </div>
           </div>
           <div className="text-center">
             <a
-              href="https://brudf.edu.bd"
+              href="https://brudf.onrender.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition-colors duration-200"
@@ -215,17 +314,16 @@ function App() {
             </a>
           </div>
           <p className="text-xs text-center mt-3 opacity-75">
-            Developed by the Debate Forum for the University Community
+            Developed by the BRUDF team for the University Community
           </p>
         </div>
 
         {/* Footer */}
         <footer className="text-center py-6">
-          <p className="text-sm text-gray-600">
-            © 2024 Begum Rokeya University, Rangpur
-          </p>
+          <p className="text-sm text-gray-600">© 2025 MD. Rishad Nur</p>
           <p className="text-xs text-gray-500 mt-1">
-            First Digital Bus Schedule System
+            First Digital Bus Schedule System of Begum Rokeya University,
+            Rangpur
           </p>
         </footer>
       </main>
