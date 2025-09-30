@@ -568,7 +568,7 @@
     },
     {
       "id": "route7-1-30pm",
-      "name": "Route 7 (Campus_Prgacha_Campus)",
+      "name": "Route 7 (Campus_Pirgacha_Campus)",
       "Start Time": "1:30pm",
       "schedule": [
         { "Time": "13:30", "Stopage": "Campus" },
@@ -584,7 +584,7 @@
     },
     {
       "id": "route7-5-10pm",
-      "name": "Route 7 (Campus_Prgacha_Campus)",
+      "name": "Route 7 (Campus_Pirgacha_Campus)",
       "Start Time": "5:10pm",
       "schedule": [
         { "Time": "17:10", "Stopage": "Campus" },
@@ -602,7 +602,7 @@
     },
     {
       "id": "route7-8-10am",
-      "name": "Route 7 (Campus_Prgacha_Campus)",
+      "name": "Route 7 (Campus_Pirgacha_Campus)",
       "Start Time": "8:10am",
       "schedule": [
         { "Time": "08:10", "Stopage": "Campus" },
