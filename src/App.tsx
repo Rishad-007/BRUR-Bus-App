@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
 
-import {
-  calculateTimeDifference,
-  formatTimeDifference,
-} from "./utils/timeUtils";
+// ...existing code...
 
 // Helper to convert 24h time string (e.g. '17:10') to 12h format with am/pm
 function formatTo12Hour(time24: string) {
@@ -110,6 +107,8 @@ function App() {
           <div className="flex items-center justify-center space-x-3">
             <div className="bg-university-500 p-3 rounded-full">
               <BusIcon className="w-8 h-8 text-white" />
+              {/* bus logo */}
+
             </div>
             <div className="text-center">
               <h1 className="text-2xl font-bold text-gray-800">
@@ -120,10 +119,10 @@ function App() {
               </p>
               <div className="mt-2 flex items-center justify-center space-x-2">
                 <div className="w-6 h-6 bg-university-500 rounded-full flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">BR</span>
+                  <span className="text-white text-xs font-bold">BRUDF</span>
                 </div>
                 <span className="text-xs text-gray-500">
-                  Official University App
+                  Begum Rokeya University Debate Forum (BRUDF)
                 </span>
               </div>
             </div>

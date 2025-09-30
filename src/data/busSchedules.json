@@ -1,6 +1,162 @@
 {
   "buses": [
     {
+      "id": "route4-8-10am",
+      "name": "Route 3 (Campus-DC_Mor-Campus) - 8:10pm",
+      "schedule": [
+        { "Time": "8:10", "Stopage": "University Campus" },
+        { "Time": "8:14", "Stopage": "Modern Mor" },
+        { "Time": "8:18", "Stopage": "Dorshana Mor" },
+        { "Time": "8:20", "Stopage": "Rail Gate" },
+        { "Time": "8:25", "Stopage": "Bus Terminal" },
+        { "Time": "8:27", "Stopage": "Textile Mor" },
+        { "Time": "8:29", "Stopage": "Ideal Mor" },
+        { "Time": "8:31", "Stopage": "Checkpost" },
+        { "Time": "8:33", "Stopage": "Medical Mor" },
+        { "Time": "8:38", "Stopage": "Bangladesh bank Mor" },
+        { "Time": "8:40", "Stopage": "DC_Mor" },
+        { "Time": "8:42", "Stopage": "TT. College" },
+        { "Time": "8:45", "Stopage": "Checkpost" },
+        { "Time": "8:47", "Stopage": "Ideal Mor" },
+        { "Time": "8:50", "Stopage": "Bus Terminal" },
+        { "Time": "9:00", "Stopage": "University Campus" }
+      ]
+    },
+    {
+      "id": "route4-9-10am",
+      "name": "Route 3 (Campus-DC_Mor-Campus) - 9:10am",
+      "schedule": [
+        { "Time": "9:10", "Stopage": "University Campus" },
+        { "Time": "9:14", "Stopage": "Modern Mor" },
+        { "Time": "9:18", "Stopage": "Dorshana Mor" },
+        { "Time": "9:20", "Stopage": "Rail Gate" },
+        { "Time": "9:25", "Stopage": "Bus Terminal" },
+        { "Time": "9:27", "Stopage": "Textile Mor" },
+        { "Time": "9:29", "Stopage": "Ideal Mor" },
+        { "Time": "9:31", "Stopage": "Checkpost" },
+        { "Time": "9:33", "Stopage": "Medical Mor" },
+        { "Time": "9:38", "Stopage": "Bangladesh bank Mor" },
+        { "Time": "9:40", "Stopage": "DC_Mor" },
+        { "Time": "9:42", "Stopage": "TT. College" },
+        { "Time": "9:45", "Stopage": "Checkpost" },
+        { "Time": "9:47", "Stopage": "Ideal Mor" },
+        { "Time": "9:50", "Stopage": "Bus Terminal" },
+        { "Time": "10:00", "Stopage": "University Campus" }
+      ]
+    },
+    {
+      "id": "route4-11-10am",
+      "name": "Route 3 (Campus-DC_Mor-Campus) - 11:10am",
+      "schedule": [
+        { "Time": "11:10", "Stopage": "University Campus" },
+        { "Time": "11:14", "Stopage": "Modern Mor" },
+        { "Time": "11:18", "Stopage": "Dorshana Mor" },
+        { "Time": "11:20", "Stopage": "Rail Gate" },
+        { "Time": "11:25", "Stopage": "Bus Terminal" },
+        { "Time": "11:27", "Stopage": "Textile Mor" },
+        { "Time": "11:29", "Stopage": "Ideal Mor" },
+        { "Time": "11:31", "Stopage": "Checkpost" },
+        { "Time": "11:33", "Stopage": "Medical Mor" },
+        { "Time": "11:38", "Stopage": "Bangladesh bank Mor" },
+        { "Time": "11:40", "Stopage": "DC_Mor" },
+        { "Time": "11:42", "Stopage": "TT. College" },
+        { "Time": "11:45", "Stopage": "Checkpost" },
+        { "Time": "11:47", "Stopage": "Ideal Mor" },
+        { "Time": "11:50", "Stopage": "Bus Terminal" },
+        { "Time": "12:00", "Stopage": "University Campus" }
+      ]
+    },
+    {
+      "id": "route4-1-30pm",
+      "name": "Route 3 (Campus-DC_Mor-Campus) - 1:30pm",
+      "schedule": [
+        { "Time": "13:30", "Stopage": "University Campus" },
+        { "Time": "13:34", "Stopage": "Modern Mor" },
+        { "Time": "13:38", "Stopage": "Dorshana Mor" },
+        { "Time": "13:40", "Stopage": "Rail Gate" },
+        { "Time": "13:45", "Stopage": "Bus Terminal" },
+        { "Time": "13:47", "Stopage": "Textile Mor" },
+        { "Time": "13:49", "Stopage": "Ideal Mor" },
+        { "Time": "13:51", "Stopage": "Checkpost" },
+        { "Time": "13:53", "Stopage": "Medical Mor" },
+        { "Time": "13:58", "Stopage": "Bangladesh bank Mor" },
+        { "Time": "14:00", "Stopage": "DC_Mor" },
+        { "Time": "14:02", "Stopage": "TT. College" },
+        { "Time": "14:05", "Stopage": "Checkpost" },
+        { "Time": "14:07", "Stopage": "Ideal Mor" },
+        { "Time": "14:10", "Stopage": "Bus Terminal" },
+        { "Time": "14:20", "Stopage": "University Campus" }
+      ]
+    },
+    {
+      "id": "route4-3-30pm",
+      "name": "Route 3 (Campus-DC_Mor-Campus) - 3:30pm",
+      "schedule": [
+        { "Time": "15:30", "Stopage": "University Campus" },
+        { "Time": "15:34", "Stopage": "Modern Mor" },
+        { "Time": "15:38", "Stopage": "Dorshana Mor" },
+        { "Time": "15:40", "Stopage": "Rail Gate" },
+        { "Time": "15:45", "Stopage": "Bus Terminal" },
+        { "Time": "15:47", "Stopage": "Textile Mor" },
+        { "Time": "15:49", "Stopage": "Ideal Mor" },
+        { "Time": "15:51", "Stopage": "Checkpost" },
+        { "Time": "15:53", "Stopage": "Medical Mor" },
+        { "Time": "15:58", "Stopage": "Bangladesh bank Mor" },
+        { "Time": "16:00", "Stopage": "DC_Mor" },
+        { "Time": "16:02", "Stopage": "TT. College" },
+        { "Time": "16:05", "Stopage": "Checkpost" },
+        { "Time": "16:07", "Stopage": "Ideal Mor" },
+        { "Time": "16:10", "Stopage": "Bus Terminal" },
+        { "Time": "16:20", "Stopage": "University Campus" }
+      ]
+    },
+    {
+      "id": "route4-5-10pm",
+      "name": "Route 3 (Campus-DC_Mor-Campus) - 5:10pm",
+      "schedule": [
+        { "Time": "17:10", "Stopage": "University Campus" },
+        { "Time": "17:14", "Stopage": "Modern Mor" },
+        { "Time": "17:18", "Stopage": "Dorshana Mor" },
+        { "Time": "17:20", "Stopage": "Rail Gate" },
+        { "Time": "17:25", "Stopage": "Bus Terminal" },
+        { "Time": "17:27", "Stopage": "Textile Mor" },
+        { "Time": "17:29", "Stopage": "Ideal Mor" },
+        { "Time": "17:31", "Stopage": "Checkpost" },
+        { "Time": "17:33", "Stopage": "Medical Mor" },
+        { "Time": "17:38", "Stopage": "Bangladesh bank Mor" },
+        { "Time": "17:40", "Stopage": "DC_Mor" },
+        { "Time": "17:42", "Stopage": "TT. College" },
+        { "Time": "17:45", "Stopage": "Checkpost" },
+        { "Time": "17:47", "Stopage": "Ideal Mor" },
+        { "Time": "17:50", "Stopage": "Bus Terminal" },
+        { "Time": "18:00", "Stopage": "University Campus" }
+      ]
+    },
+
+    {
+      "id": "Library_trip",
+      "name": "Library Trip 7:10pm",
+      "schedule": [
+        { "Time": "19:10", "Stopage": "University Campus" },
+        { "Time": "19:14", "Stopage": "Modern Mor" },
+        { "Time": "19:18", "Stopage": "Dorshana Mor" },
+        { "Time": "19:20", "Stopage": "Rail Gate" },
+        { "Time": "19:25", "Stopage": "Bus Terminal" },
+        { "Time": "19:27", "Stopage": "Textile Mor" },
+        { "Time": "19:29", "Stopage": "Ideal Mor" },
+        { "Time": "19:31", "Stopage": "Checkpost" },
+        { "Time": "19:33", "Stopage": "Medical Mor" },
+        { "Time": "19:38", "Stopage": "Bangladesh bank Mor" },
+        { "Time": "19:40", "Stopage": "DC_Mor" },
+        { "Time": "19:42", "Stopage": "TT. College" },
+        { "Time": "19:45", "Stopage": "Checkpost" },
+        { "Time": "19:47", "Stopage": "Ideal Mor" },
+        { "Time": "19:50", "Stopage": "Bus Terminal" },
+        { "Time": "20:00", "Stopage": "University Campus" }
+      ]
+    },
+
+    {
       "id": "route3-5-10pm",
       "name": "Route 3 (Campus-Bodorgonj-Campus) - 5:10pm",
       "schedule": [
@@ -78,6 +234,138 @@
         { "Time": "9:50", "Stopage": "Khamar Mor" },
         { "Time": "9:55", "Stopage": "Lalbag" },
         { "Time": "10:00", "Stopage": "University Campus" }
+      ]
+    },
+    {
+      "id": "route2-8-10am",
+      "name": "Route 2 (Campus-Sathmatha-Campus) - 8:10am",
+      "schedule": [
+        { "Time": "8:10", "Stopage": "University Campus" },
+        { "Time": "8:16", "Stopage": "Golakata" },
+        { "Time": "8:20", "Stopage": "Tajhat" },
+        { "Time": "8:23", "Stopage": "Sathmatha" },
+        { "Time": "8:27", "Stopage": "Khash_bagh" },
+        { "Time": "8:30", "Stopage": "Shoshan" },
+        { "Time": "8:32", "Stopage": "Gunjon" },
+        { "Time": "8:35", "Stopage": "Fire Service" },
+        { "Time": "8:39", "Stopage": "Press Club" },
+        { "Time": "8:44", "Stopage": "Grand Hotel Mor" },
+        { "Time": "8:47", "Stopage": "Shapla Chattor" },
+        { "Time": "8:50", "Stopage": "Bikon Mor" },
+        { "Time": "8:52", "Stopage": "Char Tola Mor" },
+        { "Time": "8:54", "Stopage": "Khamar Mor" },
+        { "Time": "8:56", "Stopage": "Lalbag" },
+        { "Time": "9:00", "Stopage": "University Campus" }
+      ]
+    },
+    {
+      "id": "route2-9-10am",
+      "name": "Route 2 (Campus-Sathmatha-Campus) - 9:10am",
+      "schedule": [
+        { "Time": "9:10", "Stopage": "University Campus" },
+        { "Time": "9:16", "Stopage": "Golakata" },
+        { "Time": "9:20", "Stopage": "Tajhat" },
+        { "Time": "9:23", "Stopage": "Sathmatha" },
+        { "Time": "9:27", "Stopage": "Khash_bagh" },
+        { "Time": "9:30", "Stopage": "Shoshan" },
+        { "Time": "9:32", "Stopage": "Gunjon" },
+        { "Time": "9:35", "Stopage": "Fire Service" },
+        { "Time": "9:39", "Stopage": "Press Club" },
+        { "Time": "9:44", "Stopage": "Grand Hotel Mor" },
+        { "Time": "9:47", "Stopage": "Shapla Chattor" },
+        { "Time": "9:50", "Stopage": "Bikon Mor" },
+        { "Time": "9:52", "Stopage": "Char Tola Mor" },
+        { "Time": "9:54", "Stopage": "Khamar Mor" },
+        { "Time": "9:56", "Stopage": "Lalbag" },
+        { "Time": "10:00", "Stopage": "University Campus" }
+      ]
+    },
+    {
+      "id": "route2-11-10am",
+      "name": "Route 2 (Campus-Sathmatha-Campus) - 11:10am",
+      "schedule": [
+        { "Time": "11:10", "Stopage": "University Campus" },
+        { "Time": "11:16", "Stopage": "Golakata" },
+        { "Time": "11:20", "Stopage": "Tajhat" },
+        { "Time": "11:23", "Stopage": "Sathmatha" },
+        { "Time": "11:27", "Stopage": "Khash_bagh" },
+        { "Time": "11:30", "Stopage": "Shoshan" },
+        { "Time": "11:32", "Stopage": "Gunjon" },
+        { "Time": "11:35", "Stopage": "Fire Service" },
+        { "Time": "11:39", "Stopage": "Press Club" },
+        { "Time": "11:44", "Stopage": "Grand Hotel Mor" },
+        { "Time": "11:47", "Stopage": "Shapla Chattor" },
+        { "Time": "11:50", "Stopage": "Bikon Mor" },
+        { "Time": "11:52", "Stopage": "Char Tola Mor" },
+        { "Time": "11:54", "Stopage": "Khamar Mor" },
+        { "Time": "11:56", "Stopage": "Lalbag" },
+        { "Time": "12:00", "Stopage": "University Campus" }
+      ]
+    },
+    {
+      "id": "route2-1-30pm",
+      "name": "Route 2 (Campus-Sathmatha-Campus) - 1:30pm",
+      "schedule": [
+        { "Time": "13:30", "Stopage": "University Campus" },
+        { "Time": "13:36", "Stopage": "Golakata" },
+        { "Time": "13:40", "Stopage": "Tajhat" },
+        { "Time": "13:43", "Stopage": "Sathmatha" },
+        { "Time": "13:47", "Stopage": "Khash_bagh" },
+        { "Time": "13:50", "Stopage": "Shoshan" },
+        { "Time": "13:52", "Stopage": "Gunjon" },
+        { "Time": "13:55", "Stopage": "Fire Service" },
+        { "Time": "14:00", "Stopage": "Press Club" },
+        { "Time": "14:05", "Stopage": "Grand Hotel Mor" },
+        { "Time": "14:10", "Stopage": "Shapla Chattor" },
+        { "Time": "14:13", "Stopage": "Bikon Mor" },
+        { "Time": "14:16", "Stopage": "Char Tola Mor" },
+        { "Time": "14:20", "Stopage": "Khamar Mor" },
+        { "Time": "14:25", "Stopage": "Lalbag" },
+        { "Time": "14:30", "Stopage": "University Campus" }
+      ]
+    },
+    {
+      "id": "route2-3-30pm",
+      "name": "Route 2 (Campus-Sathmatha-Campus) - 3:30pm",
+      "schedule": [
+        { "Time": "15:30", "Stopage": "University Campus" },
+        { "Time": "15:36", "Stopage": "Golakata" },
+        { "Time": "15:40", "Stopage": "Tajhat" },
+        { "Time": "15:43", "Stopage": "Sathmatha" },
+        { "Time": "15:47", "Stopage": "Khash_bagh" },
+        { "Time": "15:50", "Stopage": "Shoshan" },
+        { "Time": "15:52", "Stopage": "Gunjon" },
+        { "Time": "15:55", "Stopage": "Fire Service" },
+        { "Time": "16:00", "Stopage": "Press Club" },
+        { "Time": "16:05", "Stopage": "Grand Hotel Mor" },
+        { "Time": "16:10", "Stopage": "Shapla Chattor" },
+        { "Time": "16:13", "Stopage": "Bikon Mor" },
+        { "Time": "16:16", "Stopage": "Char Tola Mor" },
+        { "Time": "16:20", "Stopage": "Khamar Mor" },
+        { "Time": "16:25", "Stopage": "Lalbag" },
+        { "Time": "16:30", "Stopage": "University Campus" }
+      ]
+    },
+    {
+      "id": "route2-5-10pm",
+      "name": "Route 2 (Campus-Sathmatha-Campus) - 5:10pm",
+      "schedule": [
+        { "Time": "17:10", "Stopage": "University Campus" },
+        { "Time": "17:16", "Stopage": "Golakata" },
+        { "Time": "17:20", "Stopage": "Tajhat" },
+        { "Time": "17:23", "Stopage": "Sathmatha" },
+        { "Time": "17:27", "Stopage": "Khash_bagh" },
+        { "Time": "17:30", "Stopage": "Shoshan" },
+        { "Time": "17:32", "Stopage": "Gunjon" },
+        { "Time": "17:35", "Stopage": "Fire Service" },
+        { "Time": "17:39", "Stopage": "Press Club" },
+        { "Time": "17:44", "Stopage": "Grand Hotel Mor" },
+        { "Time": "17:47", "Stopage": "Shapla Chattor" },
+        { "Time": "17:50", "Stopage": "Bikon Mor" },
+        { "Time": "17:52", "Stopage": "Char Tola Mor" },
+        { "Time": "17:54", "Stopage": "Khamar Mor" },
+        { "Time": "17:56", "Stopage": "Lalbag" },
+        { "Time": "18:00", "Stopage": "University Campus" }
       ]
     },
     {
@@ -309,7 +597,7 @@
     },
     {
       "id": "route8-1-30pm",
-      "name": "Route 8 (BRTC_ Campus_Kaunia_campus) - Trip_1:30pm",
+      "name": "Route 8 (BRTC_ Campus_Kaunia_campus) - 1:30pm",
       "schedule": [
         { "Time": "13:30", "Stopage": "Capus" },
         { "Time": "13:35", "Stopage": "Sathmatha" },
@@ -329,7 +617,7 @@
     },
     {
       "id": "route8-5-10pm",
-      "name": "Route 8 (BRTC_ Campus_Kaunia_campus) - Trip_5:10pm",
+      "name": "Route 8 (BRTC_ Campus_Kaunia_campus) - 5:10pm",
       "schedule": [
         { "Time": "17:10", "Stopage": "Capus" },
         { "Time": "17:15", "Stopage": "Sathmatha" },
@@ -349,7 +637,7 @@
     },
     {
       "id": "route8-8-30am",
-      "name": "Route 8 (BRTC_ Campus_Kaunia_campus) - Trip_8:30am",
+      "name": "Route 8 (BRTC_ Campus_Kaunia_campus) - 8:30am",
       "schedule": [
         { "Time": "08:40", "Stopage": "Capus" },
         { "Time": "08:45", "Stopage": "Sathmatha" },
@@ -369,7 +657,7 @@
     },
     {
       "id": "route9-3-30pm",
-      "name": "Route 9 (Campus_gangacara_campus) - 15:30",
+      "name": "Route 9 (Campus_gangacara_campus) - 3:30pm",
       "schedule": [
         { "Time": "15:30", "Stopage": "Campus" },
         { "Time": "15:50", "Stopage": "Bangladesh bank Mor" },
