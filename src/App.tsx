@@ -104,25 +104,36 @@ function App() {
       {/* Header */}
       <header className="bg-white shadow-lg border-b-4 border-university-500">
         <div className="max-w-md mx-auto px-4 py-6">
-          <div className="flex items-center justify-center space-x-3">
-            <div className="bg-university-500 p-3 rounded-full">
-              <BusIcon className="w-8 h-8 text-white" />
-              {/* bus logo */}
-
+          <div className="flex flex-col items-center justify-center gap-2">
+            <div className="flex items-center justify-center gap-3">
+              <img
+                src="/logo/logo_University.png"
+                alt="University Logo"
+                className="bg-white shadow"
+                style={{
+                  maxWidth: "44px",
+                  maxHeight: "44px",
+                  width: "auto",
+                  height: "auto",
+                }}
+              />
+              <img
+                src="/logo/logo brudf.png"
+                alt="BRUDF Logo"
+                className="bg-white shadow rounded-full border border-university-500"
+                style={{ width: "36px", height: "36px", objectFit: "contain" }}
+              />
             </div>
-            <div className="text-center">
+            <div className="text-center mt-2">
               <h1 className="text-2xl font-bold text-gray-800">
                 BRUR Bus Schedule
               </h1>
               <p className="text-sm text-gray-600">
                 Begum Rokeya University, Rangpur
               </p>
-              <div className="mt-2 flex items-center justify-center space-x-2">
-                <div className="w-6 h-6 bg-university-500 rounded-full flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">BRUDF</span>
-                </div>
+              <div className="mt-2 flex items-center justify-center gap-2">
                 <span className="text-xs text-gray-500">
-                  Begum Rokeya University Debate Forum (BRUDF)
+                  By Begum Rokeya University Debate Forum (BRUDF)
                 </span>
               </div>
             </div>
