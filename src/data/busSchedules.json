@@ -2,7 +2,8 @@
   "buses": [
     {
       "id": "route4-8-10am",
-      "name": "Route 4 (Campus-DC_Mor-Campus) - 8:10pm",
+      "name": "Route 4 (Campus-DC_Mor-Campus)",
+      "Start Time": "8:10am",
       "schedule": [
         { "Time": "8:10", "Stopage": "University Campus" },
         { "Time": "8:14", "Stopage": "Modern Mor" },
@@ -24,7 +25,8 @@
     },
     {
       "id": "route4-9-10am",
-      "name": "Route 4 (Campus-DC_Mor-Campus) - 9:10am",
+      "name": "Route 4 (Campus-DC_Mor-Campus)",
+      "Start Time": "9:10am",
       "schedule": [
         { "Time": "9:10", "Stopage": "University Campus" },
         { "Time": "9:14", "Stopage": "Modern Mor" },
@@ -46,7 +48,8 @@
     },
     {
       "id": "route4-11-10am",
-      "name": "Route 4 (Campus-DC_Mor-Campus) - 11:10am",
+      "name": "Route 4 (Campus-DC_Mor-Campus)",
+      "Start Time": "11:10am",
       "schedule": [
         { "Time": "11:10", "Stopage": "University Campus" },
         { "Time": "11:14", "Stopage": "Modern Mor" },
@@ -68,7 +71,8 @@
     },
     {
       "id": "route4-1-30pm",
-      "name": "Route 4 (Campus-DC_Mor-Campus) - 1:30pm",
+      "name": "Route 4 (Campus-DC_Mor-Campus)",
+      "Start Time": "1:30pm",
       "schedule": [
         { "Time": "13:30", "Stopage": "University Campus" },
         { "Time": "13:34", "Stopage": "Modern Mor" },
@@ -90,7 +94,8 @@
     },
     {
       "id": "route4-3-30pm",
-      "name": "Route 4 (Campus-DC_Mor-Campus) - 3:30pm",
+      "name": "Route 4 (Campus-DC_Mor-Campus)",
+      "Start Time": "3:30pm",
       "schedule": [
         { "Time": "15:30", "Stopage": "University Campus" },
         { "Time": "15:34", "Stopage": "Modern Mor" },
@@ -112,7 +117,8 @@
     },
     {
       "id": "route4-5-10pm",
-      "name": "Route 4 (Campus-DC_Mor-Campus) - 5:10pm",
+      "name": "Route 4 (Campus-DC_Mor-Campus)",
+      "Start Time": "5:10pm",
       "schedule": [
         { "Time": "17:10", "Stopage": "University Campus" },
         { "Time": "17:14", "Stopage": "Modern Mor" },
@@ -135,7 +141,8 @@
 
     {
       "id": "Library_trip",
-      "name": "Library Trip 7:10pm",
+      "name": "Library Trip",
+      "Start Time": "7:10pm",
       "schedule": [
         { "Time": "19:10", "Stopage": "University Campus" },
         { "Time": "19:14", "Stopage": "Modern Mor" },
@@ -158,7 +165,8 @@
 
     {
       "id": "route3-5-10pm",
-      "name": "Route 3 (Campus-Bodorgonj-Campus) - 5:10pm",
+      "name": "Route 3 (Campus-Bodorgonj-Campus)",
+      "Start Time": "5:10pm",
       "schedule": [
         { "Time": "17:10", "Stopage": "University Campus" },
         { "Time": "17:10", "Stopage": "Lalbag" },
@@ -198,7 +206,8 @@
     },
     {
       "id": "route3-8-10am",
-      "name": "Route 3 (Campus-Bodorgonj-Campus) - 8:10am",
+      "name": "Route 3 (Campus-Bodorgonj-Campus)",
+      "Start Time": "8:10am",
       "schedule": [
         { "Time": "8:10", "Stopage": "University Campus" },
         { "Time": "8:13", "Stopage": "Modern Mor" },
@@ -238,7 +247,8 @@
     },
     {
       "id": "route2-8-10am",
-      "name": "Route 2 (Campus-Sathmatha-Campus) - 8:10am",
+      "name": "Route 2 (Campus-Sathmatha-Campus)",
+      "Start Time": "8:10am",
       "schedule": [
         { "Time": "8:10", "Stopage": "University Campus" },
         { "Time": "8:16", "Stopage": "Golakata" },
@@ -260,7 +270,8 @@
     },
     {
       "id": "route2-9-10am",
-      "name": "Route 2 (Campus-Sathmatha-Campus) - 9:10am",
+      "name": "Route 2 (Campus-Sathmatha-Campus)",
+      "Start Time": "9:10am",
       "schedule": [
         { "Time": "9:10", "Stopage": "University Campus" },
         { "Time": "9:16", "Stopage": "Golakata" },
@@ -282,7 +293,8 @@
     },
     {
       "id": "route2-11-10am",
-      "name": "Route 2 (Campus-Sathmatha-Campus) - 11:10am",
+      "name": "Route 2 (Campus-Sathmatha-Campus)",
+      "Start Time": "11:10am",
       "schedule": [
         { "Time": "11:10", "Stopage": "University Campus" },
         { "Time": "11:16", "Stopage": "Golakata" },
@@ -304,7 +316,8 @@
     },
     {
       "id": "route2-1-30pm",
-      "name": "Route 2 (Campus-Sathmatha-Campus) - 1:30pm",
+      "name": "Route 2 (Campus-Sathmatha-Campus)",
+      "Start Time": "1:30pm",
       "schedule": [
         { "Time": "13:30", "Stopage": "University Campus" },
         { "Time": "13:36", "Stopage": "Golakata" },
@@ -326,7 +339,8 @@
     },
     {
       "id": "route2-3-30pm",
-      "name": "Route 2 (Campus-Sathmatha-Campus) - 3:30pm",
+      "name": "Route 2 (Campus-Sathmatha-Campus)",
+      "Start Time": "3:30pm",
       "schedule": [
         { "Time": "15:30", "Stopage": "University Campus" },
         { "Time": "15:36", "Stopage": "Golakata" },
@@ -348,7 +362,8 @@
     },
     {
       "id": "route2-5-10pm",
-      "name": "Route 2 (Campus-Sathmatha-Campus) - 5:10pm",
+      "name": "Route 2 (Campus-Sathmatha-Campus)",
+      "Start Time": "5:10pm",
       "schedule": [
         { "Time": "17:10", "Stopage": "University Campus" },
         { "Time": "17:16", "Stopage": "Golakata" },
@@ -370,7 +385,8 @@
     },
     {
       "id": "route5-3-30pm",
-      "name": "Route 5 (Campus_Taragonj_Camous) - 3:30pm",
+      "name": "Route 5 (Campus_Taragonj_Camous)",
+      "Start Time": "3:30pm",
       "schedule": [
         { "Time": "15:30", "Stopage": "Campus" },
         { "Time": "15:40", "Stopage": "Bus Terminal" },
@@ -395,7 +411,8 @@
     },
     {
       "id": "route5-5-10pm",
-      "name": "Route 5 (Campus_Taragonj_Camous) - 5:10pm",
+      "name": "Route 5 (Campus_Taragonj_Camous)",
+      "Start Time": "5:10pm",
       "schedule": [
         { "Time": "17:10", "Stopage": "Campus" },
         { "Time": "17:20", "Stopage": "Bus Terminal" },
@@ -429,7 +446,8 @@
     },
     {
       "id": "route5-8-10am",
-      "name": "Route 5 (Campus_Taragonj_Camous) - 8:10am",
+      "name": "Route 5 (Campus_Taragonj_Camous)",
+      "Start Time": "8:10am",
       "schedule": [
         { "Time": "8:10", "Stopage": "Campus" },
         { "Time": "8:20", "Stopage": "Bus Terminal" },
@@ -463,7 +481,8 @@
     },
     {
       "id": "route6-11-10am",
-      "name": "Route 6 (Campus_Pirganj_Campus) - 11:10am",
+      "name": "Route 6 (Campus_Pirganj_Campus)",
+      "Start Time": "11:10am",
       "schedule": [
         { "Time": "11:00", "Stopage": "Campus" },
         { "Time": "11:05", "Stopage": "Payrabond" },
@@ -483,7 +502,8 @@
     },
     {
       "id": "route6-5-10pm",
-      "name": "Route 6 (Campus_Pirganj_Campus) - 5:10pm",
+      "name": "Route 6 (Campus_Pirganj_Campus)",
+      "Start Time": "5:10pm",
       "schedule": [
         { "Time": "17:10", "Stopage": "Campus" },
         { "Time": "17:15", "Stopage": "Payrabond" },
@@ -515,7 +535,8 @@
     },
     {
       "id": "route6-8-10am",
-      "name": "Route 6 (Campus_Pirganj_Campus) - 8:10am",
+      "name": "Route 6 (Campus_Pirganj_Campus)",
+      "Start Time": "8:10am",
       "schedule": [
         { "Time": "8:10", "Stopage": "Campus" },
         { "Time": "8:15", "Stopage": "Payrabond" },
@@ -547,7 +568,8 @@
     },
     {
       "id": "route7-1-30pm",
-      "name": "Route 7 (Campus_Prgacha_Campus) - 13:30",
+      "name": "Route 7 (Campus_Prgacha_Campus)",
+      "Start Time": "1:30pm",
       "schedule": [
         { "Time": "13:30", "Stopage": "Campus" },
         { "Time": "13:40", "Stopage": "Mahiganj bazar" },
@@ -562,7 +584,8 @@
     },
     {
       "id": "route7-5-10pm",
-      "name": "Route 7 (Campus_Prgacha_Campus) - 5:10pm",
+      "name": "Route 7 (Campus_Prgacha_Campus)",
+      "Start Time": "5:10pm",
       "schedule": [
         { "Time": "17:10", "Stopage": "Campus" },
         { "Time": "17:20", "Stopage": "Mahiganj bazar" },
@@ -579,7 +602,8 @@
     },
     {
       "id": "route7-8-10am",
-      "name": "Route 7 (Campus_Prgacha_Campus) - 8:10am",
+      "name": "Route 7 (Campus_Prgacha_Campus)",
+      "Start Time": "8:10am",
       "schedule": [
         { "Time": "08:10", "Stopage": "Campus" },
         { "Time": "08:20", "Stopage": "Mahiganj bazar" },
@@ -597,7 +621,8 @@
     },
     {
       "id": "route8-1-30pm",
-      "name": "Route 8 (BRTC_ Campus_Kaunia_campus) - 1:30pm",
+      "name": "Route 8 (BRTC_ Campus_Kaunia_campus)",
+      "Start Time": "1:30pm",
       "schedule": [
         { "Time": "13:30", "Stopage": "Capus" },
         { "Time": "13:35", "Stopage": "Sathmatha" },
@@ -617,7 +642,8 @@
     },
     {
       "id": "route8-5-10pm",
-      "name": "Route 8 (BRTC_ Campus_Kaunia_campus) - 5:10pm",
+      "name": "Route 8 (BRTC_ Campus_Kaunia_campus)",
+      "Start Time": "5:10pm",
       "schedule": [
         { "Time": "17:10", "Stopage": "Capus" },
         { "Time": "17:15", "Stopage": "Sathmatha" },
@@ -637,7 +663,8 @@
     },
     {
       "id": "route8-8-30am",
-      "name": "Route 8 (BRTC_ Campus_Kaunia_campus) - 8:30am",
+      "name": "Route 8 (BRTC_ Campus_Kaunia_campus)",
+      "Start Time": "8:30am",
       "schedule": [
         { "Time": "08:40", "Stopage": "Capus" },
         { "Time": "08:45", "Stopage": "Sathmatha" },
@@ -657,7 +684,8 @@
     },
     {
       "id": "route9-3-30pm",
-      "name": "Route 9 (Campus_gangacara_campus) - 3:30pm",
+      "name": "Route 9 (Campus_gangacara_campus)",
+      "Start Time": "3:30pm",
       "schedule": [
         { "Time": "15:30", "Stopage": "Campus" },
         { "Time": "15:50", "Stopage": "Bangladesh bank Mor" },
@@ -673,7 +701,8 @@
     },
     {
       "id": "route9-5-10pm",
-      "name": "Route 9 (Campus_gangacara_campus) - 5:10pm",
+      "name": "Route 9 (Campus_gangacara_campus)",
+      "Start Time": "5:10pm",
       "schedule": [
         { "Time": "17:10", "Stopage": "Campus" },
         { "Time": "17:30", "Stopage": "Bangladesh bank Mor" },
@@ -695,7 +724,8 @@
     },
     {
       "id": "route9-8-10am",
-      "name": "Route 9 (Campus_gangacara_campus) - 8:10am",
+      "name": "Route 9 (Campus_gangacara_campus)",
+      "Start Time": "8:10am",
       "schedule": [
         { "Time": "8:10", "Stopage": "Campus" },
         { "Time": "8:30", "Stopage": "Bangladesh bank Mor" },
@@ -718,7 +748,8 @@
     },
     {
       "id": "Saturday-Special-Trip-3-30pm",
-      "name": "Saturday Special Trip (Campus-DC_Mor-Campus) - 3:30pm",
+      "name": "Saturday Special Trip (Campus-DC_Mor-Campus)",
+      "Start Time": "3:30pm",
       "schedule": [
         { "Time": "15:30", "Stopage": "University Campus" },
         { "Time": "15:34", "Stopage": "Modern Mor" },
@@ -740,7 +771,8 @@
     },
     {
       "id": "Saturday-Special-Trip-5-30pm",
-      "name": "Saturday Special Trip (Campus-DC_Mor-Campus) - 5:30pm",
+      "name": "Saturday Special Trip (Campus-DC_Mor-Campus)",
+      "Start Time": "5:30pm",
       "schedule": [
         { "Time": "17:30", "Stopage": "University Campus" },
         { "Time": "17:34", "Stopage": "Modern Mor" },

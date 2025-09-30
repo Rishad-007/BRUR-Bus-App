@@ -47,8 +47,22 @@ type BusScheduleStop = {
 type BusSchedule = {
   id: string;
   name: string;
+  "Start Time": string;
   schedule: BusScheduleStop[];
 };
+
+// Helper to extract unique route/trip names from buses
+function getUniqueRouteNames(buses: BusSchedule[]) {
+  return Array.from(new Set(buses.map((bus) => bus.name)));
+}
+
+// Helper to check if a bus is a special trip
+function isSpecialTrip(bus: BusSchedule) {
+  return (
+    bus.name.toLowerCase().includes("library trip") ||
+    bus.name.toLowerCase().includes("saturday special trip")
+  );
+}
 
 interface SelectedBusInfo {
   bus: BusSchedule | null;
@@ -56,6 +70,8 @@ interface SelectedBusInfo {
 }
 
 function App() {
+  const [selectedRoute, setSelectedRoute] = useState<string>("");
+  const [selectedTimeBusId, setSelectedTimeBusId] = useState<string>("");
   const [selectedBusInfo, setSelectedBusInfo] = useState<SelectedBusInfo>({
     bus: null,
     selectedStop: null,
@@ -63,28 +79,65 @@ function App() {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [isLoading, setIsLoading] = useState(false);
 
+  // Prepare route and special trip lists
+
+  const allBuses: BusSchedule[] = busSchedulesData.buses;
+  const specialTrips = allBuses.filter(isSpecialTrip);
+  const routeBuses = allBuses.filter((bus) => !isSpecialTrip(bus));
+  // Get unique route/trip names
+  const routeNames = getUniqueRouteNames(routeBuses);
+
+  // Get buses for selected route name
+  const busesForSelectedRoute = selectedRoute
+    ? routeBuses.filter((bus) => bus.name === selectedRoute)
+    : [];
+
   // Update current time every minute
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date());
     }, 60000); // Update every minute
-
-    // Also update immediately on mount
     setCurrentTime(new Date());
-
     return () => clearInterval(timer);
   }, []);
 
-  const handleBusChange = (busId: string) => {
+  // Handle route selection
+  const handleRouteChange = (routeName: string) => {
+    setSelectedRoute(routeName);
+    setSelectedTimeBusId("");
+    setSelectedBusInfo({ bus: null, selectedStop: null });
+  };
+
+  // Handle time selection for route
+  const handleTimeChange = (busId: string) => {
     setIsLoading(true);
     try {
-      const bus = busSchedulesData.buses.find((b: any) => b.id === busId);
+      const bus = allBuses.find((b) => b.id === busId);
+      setSelectedTimeBusId(busId);
       setSelectedBusInfo({
         bus: bus || null,
         selectedStop: null,
       });
     } catch (error) {
       console.error("Error selecting bus:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Handle special trip selection
+  const handleSpecialTripChange = (busId: string) => {
+    setIsLoading(true);
+    try {
+      const bus = specialTrips.find((b) => b.id === busId);
+      setSelectedRoute("");
+      setSelectedTimeBusId(busId);
+      setSelectedBusInfo({
+        bus: bus || null,
+        selectedStop: null,
+      });
+    } catch (error) {
+      console.error("Error selecting special trip:", error);
     } finally {
       setIsLoading(false);
     }
@@ -159,24 +212,77 @@ function App() {
           </div>
         </div>
 
-        {/* Bus Selection */}
+        {/* Bus Selection (Two-step: Route then Time) */}
         <div className="bg-white rounded-xl shadow-lg p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
             <BusIcon className="w-5 h-5 mr-2 text-university-600" />
-            Select Bus
+            Select Route & Time
             {isLoading && (
               <div className="ml-2 w-4 h-4 border-2 border-university-500 border-t-transparent rounded-full animate-spin"></div>
             )}
           </h2>
+
+          {/* Route selection */}
+          <label className="block mb-2 text-sm font-medium text-gray-700">
+            Select Route/Trip Name
+          </label>
           <select
-            value={selectedBusInfo.bus?.id || ""}
-            onChange={(e) => handleBusChange(e.target.value)}
+            value={selectedRoute}
+            onChange={(e) => handleRouteChange(e.target.value)}
             disabled={isLoading}
-            aria-label="Select a bus route"
+            aria-label="Select a route name"
+            className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-university-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <option value="">Choose a route/trip...</option>
+            {routeNames.map((route) => (
+              <option key={route} value={route}>
+                {route}
+              </option>
+            ))}
+          </select>
+
+          {/* Time selection for selected route */}
+          {selectedRoute && (
+            <>
+              <label className="block mb-2 text-sm font-medium text-gray-700">
+                Select Start Time
+              </label>
+              <select
+                value={selectedTimeBusId}
+                onChange={(e) => handleTimeChange(e.target.value)}
+                disabled={isLoading}
+                aria-label="Select a time for the route"
+                className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-university-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <option value="">Choose a time...</option>
+                {busesForSelectedRoute.map((bus) => (
+                  <option key={bus.id} value={bus.id}>
+                    {bus["Start Time"] || "Unknown"}
+                  </option>
+                ))}
+              </select>
+            </>
+          )}
+
+          {/* Special Trips */}
+          <label className="block mb-2 text-sm font-medium text-gray-700">
+            Special Trips
+          </label>
+          <select
+            value={
+              selectedRoute === "" &&
+              selectedTimeBusId &&
+              specialTrips.some((b) => b.id === selectedTimeBusId)
+                ? selectedTimeBusId
+                : ""
+            }
+            onChange={(e) => handleSpecialTripChange(e.target.value)}
+            disabled={isLoading}
+            aria-label="Select a special trip"
             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-university-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <option value="">Choose a bus...</option>
-            {busSchedulesData.buses.map((bus: any) => (
+            <option value="">Choose a special trip...</option>
+            {specialTrips.map((bus) => (
               <option key={bus.id} value={bus.id}>
                 {bus.name}
               </option>
