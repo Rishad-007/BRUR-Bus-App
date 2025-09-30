@@ -2,7 +2,7 @@
   "buses": [
     {
       "id": "route4-8-10am",
-      "name": "Route 3 (Campus-DC_Mor-Campus) - 8:10pm",
+      "name": "Route 4 (Campus-DC_Mor-Campus) - 8:10pm",
       "schedule": [
         { "Time": "8:10", "Stopage": "University Campus" },
         { "Time": "8:14", "Stopage": "Modern Mor" },
@@ -24,7 +24,7 @@
     },
     {
       "id": "route4-9-10am",
-      "name": "Route 3 (Campus-DC_Mor-Campus) - 9:10am",
+      "name": "Route 4 (Campus-DC_Mor-Campus) - 9:10am",
       "schedule": [
         { "Time": "9:10", "Stopage": "University Campus" },
         { "Time": "9:14", "Stopage": "Modern Mor" },
@@ -46,7 +46,7 @@
     },
     {
       "id": "route4-11-10am",
-      "name": "Route 3 (Campus-DC_Mor-Campus) - 11:10am",
+      "name": "Route 4 (Campus-DC_Mor-Campus) - 11:10am",
       "schedule": [
         { "Time": "11:10", "Stopage": "University Campus" },
         { "Time": "11:14", "Stopage": "Modern Mor" },
@@ -68,7 +68,7 @@
     },
     {
       "id": "route4-1-30pm",
-      "name": "Route 3 (Campus-DC_Mor-Campus) - 1:30pm",
+      "name": "Route 4 (Campus-DC_Mor-Campus) - 1:30pm",
       "schedule": [
         { "Time": "13:30", "Stopage": "University Campus" },
         { "Time": "13:34", "Stopage": "Modern Mor" },
@@ -90,7 +90,7 @@
     },
     {
       "id": "route4-3-30pm",
-      "name": "Route 3 (Campus-DC_Mor-Campus) - 3:30pm",
+      "name": "Route 4 (Campus-DC_Mor-Campus) - 3:30pm",
       "schedule": [
         { "Time": "15:30", "Stopage": "University Campus" },
         { "Time": "15:34", "Stopage": "Modern Mor" },
@@ -112,7 +112,7 @@
     },
     {
       "id": "route4-5-10pm",
-      "name": "Route 3 (Campus-DC_Mor-Campus) - 5:10pm",
+      "name": "Route 4 (Campus-DC_Mor-Campus) - 5:10pm",
       "schedule": [
         { "Time": "17:10", "Stopage": "University Campus" },
         { "Time": "17:14", "Stopage": "Modern Mor" },
@@ -714,6 +714,50 @@
         { "Time": "9:36", "Stopage": "Pakar Matha" },
         { "Time": "9:40", "Stopage": "Bangladesh bank Mor" },
         { "Time": "10:00", "Stopage": "Campus" }
+      ]
+    },
+    {
+      "id": "Saturday-Special-Trip-3-30pm",
+      "name": "Saturday Special Trip (Campus-DC_Mor-Campus) - 3:30pm",
+      "schedule": [
+        { "Time": "15:30", "Stopage": "University Campus" },
+        { "Time": "15:34", "Stopage": "Modern Mor" },
+        { "Time": "15:38", "Stopage": "Dorshana Mor" },
+        { "Time": "15:40", "Stopage": "Rail Gate" },
+        { "Time": "15:45", "Stopage": "Bus Terminal" },
+        { "Time": "15:47", "Stopage": "Textile Mor" },
+        { "Time": "15:49", "Stopage": "Ideal Mor" },
+        { "Time": "15:51", "Stopage": "Checkpost" },
+        { "Time": "15:53", "Stopage": "Medical Mor" },
+        { "Time": "15:58", "Stopage": "Bangladesh bank Mor" },
+        { "Time": "16:00", "Stopage": "DC_Mor" },
+        { "Time": "16:02", "Stopage": "TT. College" },
+        { "Time": "16:05", "Stopage": "Checkpost" },
+        { "Time": "16:07", "Stopage": "Ideal Mor" },
+        { "Time": "16:10", "Stopage": "Bus Terminal" },
+        { "Time": "16:20", "Stopage": "University Campus" }
+      ]
+    },
+    {
+      "id": "Saturday-Special-Trip-5-30pm",
+      "name": "Saturday Special Trip (Campus-DC_Mor-Campus) - 5:30pm",
+      "schedule": [
+        { "Time": "17:30", "Stopage": "University Campus" },
+        { "Time": "17:34", "Stopage": "Modern Mor" },
+        { "Time": "17:38", "Stopage": "Dorshana Mor" },
+        { "Time": "17:40", "Stopage": "Rail Gate" },
+        { "Time": "17:45", "Stopage": "Bus Terminal" },
+        { "Time": "17:47", "Stopage": "Textile Mor" },
+        { "Time": "17:49", "Stopage": "Ideal Mor" },
+        { "Time": "17:51", "Stopage": "Checkpost" },
+        { "Time": "17:53", "Stopage": "Medical Mor" },
+        { "Time": "17:58", "Stopage": "Bangladesh bank Mor" },
+        { "Time": "18:00", "Stopage": "DC_Mor" },
+        { "Time": "18:02", "Stopage": "TT. College" },
+        { "Time": "18:05", "Stopage": "Checkpost" },
+        { "Time": "18:07", "Stopage": "Ideal Mor" },
+        { "Time": "18:10", "Stopage": "Bus Terminal" },
+        { "Time": "18:20", "Stopage": "University Campus" }
       ]
     }
   ]
